@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <com.ypms.customWidget.CustomViewPage
+        android:id="@+id/view_page"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
@@ -11,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <TextView
+        <View
             style="@style/div_vertical_line"/>
         <LinearLayout
             android:id="@+id/bottom"
@@ -20,6 +21,7 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
             <LinearLayout
+                android:id="@+id/ll_home"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -35,10 +37,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="10sp"
-                    android:text="课堂" />
+                    android:text="@string/str_class" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_discover"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -54,10 +57,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="10sp"
-                    android:text="发现" />
+                    android:text="@string/str_discover" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_mine"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -73,7 +77,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="10sp"
-                    android:text="我的" />
+                    android:text="@string/str_mine" />
             </LinearLayout>
         </LinearLayout>
 

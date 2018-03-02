@@ -14,6 +14,7 @@ import com.trello.rxlifecycle2.RxLifecycle;
 import com.trello.rxlifecycle2.android.ActivityEvent;
 import com.trello.rxlifecycle2.android.RxLifecycleAndroid;
 
+import butterknife.ButterKnife;
 import io.reactivex.Observable;
 import io.reactivex.subjects.BehaviorSubject;
 
@@ -31,6 +32,7 @@ public abstract class ToolBarActivity extends AppCompatActivity implements Lifec
         supportRequestWindowFeature(Window.FEATURE_ACTION_MODE_OVERLAY);
         mContext = this;
         setContentView(getLayoutResource());
+        ButterKnife.bind(this);
     }
 
     protected abstract int getLayoutResource();
