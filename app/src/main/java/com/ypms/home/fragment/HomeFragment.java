@@ -1,5 +1,6 @@
 package com.ypms.home.fragment;
 
+import com.ypms.R;
 import com.ypms.common.BaseFragment;
 
 /**
@@ -9,4 +10,8 @@ import com.ypms.common.BaseFragment;
 public class HomeFragment extends BaseFragment{
 
 
+    @Override
+    protected int getLayoutResource() {
+        return R.layout.fragment_home_layout;
+    }
 }

@@ -2,11 +2,13 @@ package com.ypms.home.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.PagerAdapter;
-import android.view.View;
+import android.support.v4.view.ViewPager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.ypms.R;
+import com.ypms.common.ContextUtils;
 import com.ypms.common.PageAdapter;
 import com.ypms.common.ToolBarActivity;
 import com.ypms.customWidget.CustomViewPage;
@@ -15,6 +17,7 @@ import com.ypms.home.fragment.HomeFragment;
 import com.ypms.home.fragment.MeFragment;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class MainActivity extends ToolBarActivity {
 
@@ -29,6 +32,18 @@ public class MainActivity extends ToolBarActivity {
     LinearLayout llMine;
     @BindView(R.id.bottom)
     LinearLayout bottom;
+    @BindView(R.id.iv_home)
+    ImageView ivHome;
+    @BindView(R.id.tv_home)
+    TextView tvHome;
+    @BindView(R.id.iv_discover)
+    ImageView ivDiscover;
+    @BindView(R.id.tv_discover)
+    TextView tvDiscover;
+    @BindView(R.id.iv_mine)
+    ImageView ivMine;
+    @BindView(R.id.tv_mine)
+    TextView tvMine;
 
     @Override
     protected int getLayoutResource() {
@@ -42,9 +57,27 @@ public class MainActivity extends ToolBarActivity {
     }
 
     private void initWidget() {
-        PageAdapter pageAdapter = new PageAdapter(getSupportFragmentManager(),getFragments());
+        PageAdapter pageAdapter = new PageAdapter(getSupportFragmentManager(), getFragments());
         viewPage.setAdapter(pageAdapter);
         viewPage.setOffscreenPageLimit(3);
+        viewPage.setIsScrollAble(false);
+        resetTabBg(tvHome,ivHome);
+        viewPage.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                viewPage.setCurrentItem(position, false);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     private Fragment[] getFragments() {
@@ -53,6 +86,37 @@ public class MainActivity extends ToolBarActivity {
         MeFragment meFragment = new MeFragment();
         Fragment[] fragments = new Fragment[]{homeFragment, discoverFragment, meFragment};
         return fragments;
+    }
+
+
+    @OnClick(R.id.ll_home)
+    public void homeClick() {
+        resetTabBg(tvHome,ivHome);
+        viewPage.setCurrentItem(0, false);
+    }
+
+    @OnClick(R.id.ll_discover)
+    public void discoverClick() {
+        resetTabBg(tvDiscover,ivDiscover);
+        viewPage.setCurrentItem(1, false);
+
+    }
+
+    @OnClick(R.id.ll_mine)
+    public void mineClick() {
+        resetTabBg(tvMine,ivMine);
+        viewPage.setCurrentItem(2, false);
+    }
+
+    private void resetTabBg(TextView tv, ImageView iv) {
+        tvHome.setTextColor(ContextUtils.getColor(mContext, R.color.color_grey_99));
+        tvDiscover.setTextColor(ContextUtils.getColor(mContext, R.color.color_grey_99));
+        tvMine.setTextColor(ContextUtils.getColor(mContext, R.color.color_grey_99));
+        ivDiscover.setSelected(false);
+        ivHome.setSelected(false);
+        ivMine.setSelected(false);
+        tv.setTextColor(ContextUtils.getColor(mContext, R.color.colorPrimary));
+        iv.setSelected(true);
     }
 
 }

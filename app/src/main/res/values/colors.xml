@@ -6,4 +6,5 @@
     <color name="transparent">#00000000</color>
     <color name="white">#FFFFFF</color>
     <color name="colorGrey_E6">#e6e6e6</color>
+    <color name="color_grey_99">#999999</color>
 </resources>

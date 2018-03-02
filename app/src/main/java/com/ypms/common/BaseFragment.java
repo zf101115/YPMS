@@ -1,13 +1,20 @@
 package com.ypms.common;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
 import android.support.annotation.CheckResult;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.trello.rxlifecycle2.LifecycleProvider;
 import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.trello.rxlifecycle2.RxLifecycle;
@@ -21,11 +28,38 @@ import io.reactivex.subjects.BehaviorSubject;
  * Created by Hero on 2018/3/1.
  */
 
-public class BaseFragment extends Fragment implements LifecycleProvider<FragmentEvent> {
+public abstract class BaseFragment extends Fragment implements LifecycleProvider<FragmentEvent> {
+
+    protected Activity mActivity;
+    protected Context mContext;
+    public Gson gson;
 
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.mContext = context;
+        this.mActivity = (Activity) context;
+        lifecycleSubject.onNext(FragmentEvent.ATTACH);
+    }
 
-    
+    protected abstract int getLayoutResource();
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(getLayoutResource(), container, false);
+    }
+
+    @Override
+    @CallSuper
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        lifecycleSubject.onNext(FragmentEvent.CREATE);
+        gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                .setDateFormat("yyyy-MM-dd'T'HH:mm:ss").create();
+    }
+
     /**
      * 实现RxLifeCycle开始。。
      */
