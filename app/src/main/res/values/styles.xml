@@ -13,6 +13,11 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:background">@color/colorGrey_E6</item>
     </style>
+    
+    <style name="text_white_14">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
 
     <!--竖直分割线-->
     <style name="div_horizontal_line">

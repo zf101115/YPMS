@@ -4,4 +4,9 @@
     <string name="str_discover">发现</string>
     <string name="str_mine">我的</string>
     <string name="str_like">爱学习</string>
+    <string name="str_early_education">早教</string>
+    <string name="str_foreign">外语</string>
+    <string name="str_olypic">奥数</string>
+    <string name="str_specialty">特长班</string>
+    <string name="str_learn">学习辅导</string>
 </resources>

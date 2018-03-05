@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="xrecyclerview-1.5.9">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/fc3f7344c5ae9673a57a9c21d40374d5c402b9d6/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/fc3f7344c5ae9673a57a9c21d40374d5c402b9d6/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jcodecraeer/xrecyclerview/1.5.9/4ac1cf6de596a185397df4bcabc083bab15d670/xrecyclerview-1.5.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

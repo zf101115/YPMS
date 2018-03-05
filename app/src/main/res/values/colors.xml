@@ -7,4 +7,6 @@
     <color name="white">#FFFFFF</color>
     <color name="colorGrey_E6">#e6e6e6</color>
     <color name="color_grey_99">#999999</color>
+    <color name="gradient_bottom_primary">#4BE476</color>
+    <color name="text_search_grey">#666666</color>
 </resources>

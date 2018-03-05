@@ -59,7 +59,7 @@ public class MainActivity extends ToolBarActivity {
     private void initWidget() {
         PageAdapter pageAdapter = new PageAdapter(getSupportFragmentManager(), getFragments());
         viewPage.setAdapter(pageAdapter);
-        viewPage.setOffscreenPageLimit(3);
+        viewPage.setOffscreenPageLimit(2);
         viewPage.setIsScrollAble(false);
         resetTabBg(tvHome,ivHome);
         viewPage.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
