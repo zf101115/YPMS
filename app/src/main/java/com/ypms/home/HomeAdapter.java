@@ -1,16 +1,19 @@
 package com.ypms.home;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.ypms.R;
 import com.ypms.common.recycleView.BaseRecyclerAdapter;
 import com.ypms.common.recycleView.BaseRecyclerViewHolder;
-import com.ypms.common.recycleView.RecyclerItemClickListener;
+import com.ypms.customWidget.StartView;
+import com.ypms.home.model.Mechanism;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -25,19 +28,40 @@ public class HomeAdapter extends BaseRecyclerAdapter {
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(mContext).inflate(R.layout.layout_home_header, parent, false);
+        View itemView = LayoutInflater.from(mContext).inflate(R.layout.item_home_layout, parent, false);
         return new ViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(BaseRecyclerViewHolder holder, int position) {
         ViewHolder viewHolder = (ViewHolder) holder;
+        final Mechanism mechanism = (Mechanism) items.get(position);
+        viewHolder.tvTitle.setText(mechanism.getTitle());
+        viewHolder.start.setStarMark(3.6f);
+//        Glide.with(mContext).load(mechanism.getPic()).into(viewHolder.ivPic);
     }
 
 
-    class ViewHolder extends BaseRecyclerViewHolder{
+    class ViewHolder extends BaseRecyclerViewHolder {
 
-
+        @BindView(R.id.iv_pic)
+        ImageView ivPic;
+        @BindView(R.id.tv_title)
+        TextView tvTitle;
+        @BindView(R.id.start)
+        StartView start;
+        @BindView(R.id.tv_area)
+        TextView tvArea;
+        @BindView(R.id.tv_model)
+        TextView tvModel;
+        @BindView(R.id.tv_address)
+        TextView tvAddress;
+        @BindView(R.id.tv_distance)
+        TextView tvDistance;
+        @BindView(R.id.tv_active_top)
+        TextView tvActiveTop;
+        @BindView(R.id.tv_active_bottom)
+        TextView tvActiveBottom;
 
         public ViewHolder(View itemView) {
             super(itemView, mItemClickListener);

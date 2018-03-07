@@ -34,6 +34,7 @@ public class StartView extends View {
 
     public StartView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init(context,attrs);
     }
 
     public StartView(Context context,AttributeSet attrs, int defStyleAttr) {

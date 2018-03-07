@@ -1,6 +1,7 @@
 package com.ypms.common;
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
 import android.support.annotation.CheckResult;
@@ -32,6 +33,7 @@ public abstract class ToolBarActivity extends AppCompatActivity implements Lifec
         supportRequestWindowFeature(Window.FEATURE_ACTION_MODE_OVERLAY);
         mContext = this;
         setContentView(getLayoutResource());
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         ButterKnife.bind(this);
     }
 
