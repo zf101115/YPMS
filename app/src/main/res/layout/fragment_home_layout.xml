@@ -15,7 +15,6 @@
         android:textSize="18sp"
         android:text="@string/str_like"/>
     </LinearLayout>
-
     <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
