@@ -13,6 +13,7 @@ import android.view.View;
 
 import com.ypms.R;
 
+
 /**
  * Created by Hero on 2018/3/6.
  * 自定义评分控件
@@ -20,29 +21,35 @@ import com.ypms.R;
  * isClickAble设置是否可点击，不可点击用于展示
  */
 
-public class StartView extends View {
-
+public class StartView extends View{
     private int starDistance = 0; //星星间距
     private int starCount = 5;  //星星个数
     private int starSize;     //星星高度大小，星星一般正方形，宽度等于高度
     private float starMark = 0.0F;   //评分星星
     private Bitmap starFillBitmap; //亮星星
     private Drawable starEmptyDrawable; //暗星星
-    private boolean isClickAble = true;//设置是否可点击
     private OnStarChangeListener onStarChangeListener;//监听星星变化接口
     private Paint paint;         //绘制星星画笔
-
+    private boolean isClickAble =true;
+    private boolean integerMark = false;
     public StartView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init(context, attrs);
     }
 
-    public StartView(Context context,AttributeSet attrs, int defStyleAttr) {
+    public StartView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context,attrs);
+        init(context, attrs);
     }
 
-    private void init(Context context, AttributeSet attrs) {
-        setClickable(true);
+    /**
+     * 初始化UI组件
+     *
+     * @param context
+     * @param attrs
+     */
+    private void init(Context context, AttributeSet attrs){
+        setClickable(false);
         TypedArray mTypedArray = context.obtainStyledAttributes(attrs, R.styleable.StartView);
         this.starDistance = (int) mTypedArray.getDimension(R.styleable.StartView_starDistance, 0);
         this.starSize = (int) mTypedArray.getDimension(R.styleable.StartView_starSize, 20);
@@ -57,6 +64,46 @@ public class StartView extends View {
         paint.setShader(new BitmapShader(starFillBitmap, BitmapShader.TileMode.CLAMP, BitmapShader.TileMode.CLAMP));
     }
 
+    /**
+     * 设置是否需要整数评分
+     * @param integerMark
+     */
+    public void setIntegerMark(boolean integerMark){
+        this.integerMark = integerMark;
+    }
+
+    /**
+     * 设置显示的星星的分数
+     *
+     * @param mark
+     */
+    public void setStarMark(float mark){
+        if (integerMark) {
+            starMark = (int)Math.ceil(mark);
+        }else {
+            starMark = Math.round(mark * 10) * 1.0f / 10;
+        }
+        if (this.onStarChangeListener != null) {
+            this.onStarChangeListener.onStarChange(starMark);  //调用监听接口
+        }
+        invalidate();
+    }
+
+
+    /**
+     * 定义星星点击的监听接口
+     */
+    public interface OnStarChangeListener {
+        void onStarChange(float mark);
+    }
+
+    /**
+     * 设置监听
+     * @param onStarChangeListener
+     */
+    public void setOnStarChangeListener(OnStarChangeListener onStarChangeListener){
+        this.onStarChangeListener = onStarChangeListener;
+    }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -67,7 +114,7 @@ public class StartView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (starEmptyDrawable==null || starFillBitmap == null){
+        if (starFillBitmap == null || starEmptyDrawable == null) {
             return;
         }
         for (int i = 0;i < starCount;i++) {
@@ -98,9 +145,9 @@ public class StartView extends View {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         int x = (int) event.getX();
-        if (x<0) x = 0;
+        if (x < 0) x = 0;
         if (x > getMeasuredWidth()) x = getMeasuredWidth();
-        switch (event.getAction()){
+        switch(event.getAction()){
             case MotionEvent.ACTION_DOWN: {
                 if (isClickAble)
                 setStarMark(x*1.0f / (getMeasuredWidth()*1.0f/starCount));
@@ -119,36 +166,6 @@ public class StartView extends View {
     }
 
     /**
-     * 设置显示的星星的分数
-     *
-     * @param mark
-     */
-    public void setStarMark(float mark){
-        starMark = Math.round(mark * 10) * 1.0f / 10;
-        if (this.onStarChangeListener != null) {
-            this.onStarChangeListener.onStarChange(starMark);  //调用监听接口
-        }
-        invalidate();
-    }
-
-
-    /**
-     * 定义星星点击的监听接口
-     */
-    public interface OnStarChangeListener {
-        void onStarChange(float mark);
-    }
-
-    /**
-     * 设置监听
-     * @param onStarChangeListener
-     */
-    public void setOnStarChangeListener(OnStarChangeListener onStarChangeListener){
-        this.onStarChangeListener = onStarChangeListener;
-    }
-
-
-    /**
      * drawable转bitmap
      *
      * @param drawable
@@ -163,4 +180,6 @@ public class StartView extends View {
         drawable.draw(canvas);
         return bitmap;
     }
+
+
 }
