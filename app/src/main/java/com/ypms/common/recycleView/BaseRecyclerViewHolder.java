@@ -15,6 +15,7 @@ public class BaseRecyclerViewHolder extends RecyclerView.ViewHolder implements V
         super(itemView);
         this.mClickListener = mClickListener;
         itemView.setOnClickListener(this);
+        itemView.setOnLongClickListener(this);
     }
 
     @Override

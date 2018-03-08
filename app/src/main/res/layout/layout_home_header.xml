@@ -123,10 +123,6 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:src="@drawable/shape_round_red"/>
     <!--<include layout="@layout/layout_home_sort"/>-->
     <View style="@style/div_vertical_line"/>
 </LinearLayout>
