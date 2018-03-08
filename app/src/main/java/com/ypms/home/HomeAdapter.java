@@ -37,11 +37,7 @@ public class HomeAdapter extends BaseRecyclerAdapter {
         ViewHolder viewHolder = (ViewHolder) holder;
         final Mechanism mechanism = (Mechanism) items.get(position);
         viewHolder.tvTitle.setText(mechanism.getTitle());
-<<<<<<< HEAD
-//        viewHolder.start.setStarMark(3.6f);
-=======
         viewHolder.start.setStarMark(3.6f);
->>>>>>> bed4544d4dc5e21dfda4a04908091f976c6875a0
 //        Glide.with(mContext).load(mechanism.getPic()).into(viewHolder.ivPic);
     }
 
@@ -52,13 +48,8 @@ public class HomeAdapter extends BaseRecyclerAdapter {
         ImageView ivPic;
         @BindView(R.id.tv_title)
         TextView tvTitle;
-<<<<<<< HEAD
-//        @BindView(R.id.start)
-//        StartView start;
-=======
         @BindView(R.id.start)
         StartView start;
->>>>>>> bed4544d4dc5e21dfda4a04908091f976c6875a0
         @BindView(R.id.tv_area)
         TextView tvArea;
         @BindView(R.id.tv_model)

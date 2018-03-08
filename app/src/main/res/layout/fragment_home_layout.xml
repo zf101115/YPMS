@@ -16,7 +16,6 @@
         android:textSize="18sp"
         android:text="@string/str_like"/>
     </LinearLayout>
-<<<<<<< HEAD
     <LinearLayout
         android:id="@+id/ll_tool_search"
         android:layout_width="match_parent"
@@ -31,49 +30,4 @@
         android:id="@+id/rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-    <!--<android.support.design.widget.CoordinatorLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
-        <!--<android.support.design.widget.AppBarLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content">-->
-            <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--app:layout_scrollFlags="scroll|enterAlways">-->
-                <!--<include layout="@layout/layout_home_header" />-->
-            <!--</LinearLayout>-->
-            <!--<include layout="@layout/layout_home_sort"/>-->
-            <!--<View style="@style/div_vertical_line"/>-->
-        <!--</android.support.design.widget.AppBarLayout>-->
-        <!--<com.jcodecraeer.xrecyclerview.XRecyclerView-->
-            <!--android:id="@+id/rv"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"/>-->
-    <!--</android.support.design.widget.CoordinatorLayout>-->
-=======
-    <android.support.design.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <android.support.design.widget.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll|enterAlways">
-                <include layout="@layout/layout_home_header" />
-            </LinearLayout>
-            <include layout="@layout/layout_home_sort"/>
-            <View style="@style/div_vertical_line"/>
-        </android.support.design.widget.AppBarLayout>
-        <com.jcodecraeer.xrecyclerview.XRecyclerView
-            android:id="@+id/rv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-    </android.support.design.widget.CoordinatorLayout>
->>>>>>> bed4544d4dc5e21dfda4a04908091f976c6875a0
-
 </LinearLayout>

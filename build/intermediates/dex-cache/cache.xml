@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="f1edc303e7f183909a351772d7b8ff0f0656c2f6">
+        sha1="d15dad9439cfbdce8b31031527f109bf415dc597">
         <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_aa6a921afea6f6ab496829be8b446461f1e85c4b/classes.dex" />
     </item>
 
