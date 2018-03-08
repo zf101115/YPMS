@@ -34,7 +34,11 @@ public class StartView extends View{
     private boolean integerMark = false;
     public StartView(Context context, AttributeSet attrs) {
         super(context, attrs);
+<<<<<<< HEAD
         init(context, attrs);
+=======
+        init(context,attrs);
+>>>>>>> bed4544d4dc5e21dfda4a04908091f976c6875a0
     }
 
     public StartView(Context context, AttributeSet attrs, int defStyleAttr) {

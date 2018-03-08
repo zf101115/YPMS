@@ -58,6 +58,7 @@ public class HomeFragment extends LazyBaseFragment {
     }
 
     private void initView(LayoutInflater inflater) {
+<<<<<<< HEAD
         View header = inflater.inflate(R.layout.layout_home_header,null);
         View header2 = inflater.inflate(R.layout.layout_home_sort,null);
         ButterKnife.bind(this,header);
@@ -66,6 +67,13 @@ public class HomeFragment extends LazyBaseFragment {
         rv.setLayoutManager(layoutManager);
         rv.addHeaderView(header);
         rv.addHeaderView(header2);
+=======
+//        View header = inflater.inflate(R.layout.layout_home_header,null);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        rv.setLayoutManager(layoutManager);
+//        rv.addHeaderView(header);
+>>>>>>> bed4544d4dc5e21dfda4a04908091f976c6875a0
         for (int i=0;i<=10;i++){
             Mechanism mechanism = new Mechanism(i+"古墩路因么培训机构");
             list.add(mechanism);
@@ -78,9 +86,12 @@ public class HomeFragment extends LazyBaseFragment {
             @Override
             public void OnItemClick(View view, int position) {
                 Toast.makeText(mContext,position+"",Toast.LENGTH_LONG).show();
+<<<<<<< HEAD
                 if (position>8){
                     rv.smoothScrollToPosition(2);
                 }
+=======
+>>>>>>> bed4544d4dc5e21dfda4a04908091f976c6875a0
             }
 
             @Override

@@ -18,9 +18,13 @@
             android:layout_marginBottom="22dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
+<<<<<<< HEAD
             android:background="@drawable/search_edit_white"
             android:gravity="center">
 
+=======
+            android:layout_marginBottom="22dp">
+>>>>>>> bed4544d4dc5e21dfda4a04908091f976c6875a0
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -52,7 +56,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="8dp"
+<<<<<<< HEAD
                     android:text="@string/str_early_education" />
+=======
+                    android:text="@string/str_early_education"
+                    style="@style/text_white_14"/>
+>>>>>>> bed4544d4dc5e21dfda4a04908091f976c6875a0
             </LinearLayout>
 
             <LinearLayout
@@ -73,7 +82,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="8dp"
+<<<<<<< HEAD
                     android:text="@string/str_foreign" />
+=======
+                    android:text="@string/str_foreign"
+                    style="@style/text_white_14"/>
+>>>>>>> bed4544d4dc5e21dfda4a04908091f976c6875a0
             </LinearLayout>
 
             <LinearLayout
@@ -94,7 +108,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="8dp"
+<<<<<<< HEAD
                     android:text="@string/str_olypic" />
+=======
+                    android:text="@string/str_olypic"
+                    style="@style/text_white_14"/>
+>>>>>>> bed4544d4dc5e21dfda4a04908091f976c6875a0
             </LinearLayout>
 
             <LinearLayout
@@ -115,7 +134,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="8dp"
+<<<<<<< HEAD
                     android:text="@string/str_specialty" />
+=======
+                    android:text="@string/str_specialty"
+                    style="@style/text_white_14"/>
+>>>>>>> bed4544d4dc5e21dfda4a04908091f976c6875a0
             </LinearLayout>
 
             <LinearLayout
@@ -136,7 +160,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="8dp"
+<<<<<<< HEAD
                     android:text="@string/str_learn" />
+=======
+                    android:text="@string/str_learn"
+                    style="@style/text_white_14"/>
+>>>>>>> bed4544d4dc5e21dfda4a04908091f976c6875a0
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
