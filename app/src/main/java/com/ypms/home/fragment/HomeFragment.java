@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.ypms.R;
 import com.ypms.common.LazyBaseFragment;
@@ -39,7 +40,11 @@ public class HomeFragment extends LazyBaseFragment {
     private boolean isCreatView;
     private MainActivity mActivity;
     private HomeAdapter homeAdapter;
+    private boolean isLoad;
     private ArrayList<Mechanism> list = new ArrayList<>();
+
+    @BindView(R.id.banner)
+    ConvenientBanner banner;
 
     @Override
     protected int getLayoutResource() {
@@ -61,6 +66,8 @@ public class HomeFragment extends LazyBaseFragment {
         rv.setPullRefreshEnabled(false);
         initView(inflater);
         initEvent();
+        initDate();
+        isLoad = true;
         isCreatView = true;
         return rootView;
     }
@@ -75,12 +82,7 @@ public class HomeFragment extends LazyBaseFragment {
         rv.setLayoutManager(layoutManager);
         rv.addHeaderView(header);
         rv.addHeaderView(header2);
-        for (int i=0;i<=10;i++){
-            Mechanism mechanism = new Mechanism(i+"古墩路因么培训机构");
-            list.add(mechanism);
-        }
         homeAdapter = new HomeAdapter(mContext);
-        homeAdapter.setItems(list);
         rv.setAdapter(homeAdapter);
     }
 
@@ -128,13 +130,18 @@ public class HomeFragment extends LazyBaseFragment {
     }
     @Override
     protected void lazyLoad() {
-        if (null != mActivity && isCreatView && isVisible) {
+        if (null != mActivity && isVisible && !isLoad) {
             initDate();
         }
     }
 
     private void initDate() {
-
+        for (int i=0;i<=10;i++){
+            Mechanism mechanism = new Mechanism(i+"古墩路因么培训机构");
+            list.add(mechanism);
+        }
+        homeAdapter.setItems(list);
+        homeAdapter.notifyDataSetChanged();
     }
 
     @Override

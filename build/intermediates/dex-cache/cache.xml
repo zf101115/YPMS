@@ -19,5 +19,14 @@
         sha1="d15dad9439cfbdce8b31031527f109bf415dc597">
         <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_aa6a921afea6f6ab496829be8b446461f1e85c4b/classes.dex" />
     </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhangxiao/.android/build-cache/b9b9df120811da594d8a661c2e768ffee246771e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b99798f653c15a17af6779bb9f01a66f2ee6e6ef">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6642df5206fc598290393029d80deb5ffa8f9c21/classes.dex" />
+    </item>
 
 </items>

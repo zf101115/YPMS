@@ -21,7 +21,6 @@ import butterknife.OnClick;
 
 public class MainActivity extends ToolBarActivity {
 
-
     @BindView(R.id.view_page)
     CustomViewPage viewPage;
     @BindView(R.id.ll_home)
