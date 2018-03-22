@@ -14,6 +14,9 @@ import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.trello.rxlifecycle2.RxLifecycle;
 import com.trello.rxlifecycle2.android.ActivityEvent;
 import com.trello.rxlifecycle2.android.RxLifecycleAndroid;
+import com.ypms.R;
+import com.ypms.customWidget.CustomToast;
+import com.ypms.net.RestBase;
 
 import butterknife.ButterKnife;
 import io.reactivex.Observable;
@@ -38,6 +41,11 @@ public abstract class ToolBarActivity extends AppCompatActivity implements Lifec
     }
 
     protected abstract int getLayoutResource();
+
+    protected void showRestError(RestBase restBase){
+
+        CustomToast.showToastAtCenter(mContext,restBase.getDetail(), R.drawable.custom_toast_fail,CustomToast.SHORT);
+    }
     /**
      * 实现RxLifeCycle部分。。。
      */

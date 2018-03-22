@@ -20,39 +20,6 @@ public class RetrofitClient {
 
     private Retrofit retrofit;
 
-    private RetrofitClient(int timeOut) {
-
-        Gson gson = new GsonBuilder()
-                .setDateFormat("yyyy-MM-dd'T'HH:mm:sss")
-                .create();
-        /**
-         * 设置log级别
-         *     NONE：不记录
-         *     BASIC:请求/响应行
-         *     HEADERS：请求/响应行 + 头
-         *     BODY 请求/响应行 + 头 + 体
-         */
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        logging.setLevel(HttpLoggingInterceptor.Level.NONE);
-
-
-        OkHttpClient client = new OkHttpClient.Builder()
-                .addInterceptor(logging)
-                .readTimeout(timeOut, TimeUnit.SECONDS)//设置读取超时时间
-                .writeTimeout(timeOut,TimeUnit.SECONDS)//设置写的超时时间
-                .connectTimeout(timeOut, TimeUnit.SECONDS)//设置连接超时时间
-                .retryOnConnectionFailure(true).build();
-
-        retrofit = new Retrofit.Builder()
-                .client(client)
-                .baseUrl(Config.API_HOST)
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
-
-
-
-    }
     private RetrofitClient(){
         Gson gson = new GsonBuilder()
                 .setDateFormat("yyyy-MM-dd'T'HH:mm:sss")

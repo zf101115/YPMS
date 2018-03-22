@@ -9,6 +9,15 @@ import com.ypms.common.BaseBean;
 public class Mechanism extends BaseBean {
     private String title;
     private String pic;
+    private Integer id;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Mechanism(String title){
         this.title = title;

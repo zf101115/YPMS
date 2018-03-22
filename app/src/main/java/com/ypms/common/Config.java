@@ -5,5 +5,5 @@ package com.ypms.common;
  */
 
 public class Config {
-    public static final String API_HOST = "https://xxx";
+    public static final String API_HOST = "http://116.85.48.196:3000/";
 }

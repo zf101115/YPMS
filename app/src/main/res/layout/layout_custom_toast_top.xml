@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@null">
+
+    <LinearLayout
+        android:id="@+id/ll_toast"
+        android:layout_marginTop="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#8f000000"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_toast_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/toast_notice"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:padding="12dp"
+            tools:text="请求成功"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

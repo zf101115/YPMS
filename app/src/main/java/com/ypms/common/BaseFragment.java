@@ -20,6 +20,9 @@ import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.trello.rxlifecycle2.RxLifecycle;
 import com.trello.rxlifecycle2.android.FragmentEvent;
 import com.trello.rxlifecycle2.android.RxLifecycleAndroid;
+import com.ypms.R;
+import com.ypms.customWidget.CustomToast;
+import com.ypms.net.RestBase;
 
 import io.reactivex.Observable;
 import io.reactivex.subjects.BehaviorSubject;
@@ -48,6 +51,11 @@ public abstract class BaseFragment extends Fragment implements LifecycleProvider
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(getLayoutResource(), container, false);
+    }
+
+
+    protected void showRestError(RestBase restBase){
+        CustomToast.showToastAtCenter(mContext,restBase.getDetail(), R.drawable.custom_toast_fail,CustomToast.SHORT);
     }
 
     @Override

@@ -12,6 +12,7 @@ import org.json.JSONException;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.net.SocketTimeoutException;
 
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
@@ -46,6 +47,9 @@ public abstract class BaseObserver<T> implements Observer<T> {
                 || e instanceof JSONException
                 || e instanceof ParseException)
             restBase = new RestBase(StatusCode.UNEXPECTED_ERROR,StatusCode.JSON_ERROR_TIPS);
+        else if (e.getCause().equals(SocketTimeoutException.class)){
+            restBase = new RestBase(StatusCode.TIME_OUT_ERROR, StatusCode.SOCKET_TIME_OUT);
+        }
         else
             restBase = new RestBase(StatusCode.NETWORK_ERROR, StatusCode.UNEXPECTED_ERROR_TIPS);
         onError(restBase);
