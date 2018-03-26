@@ -5,29 +5,28 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
-
-import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
+import com.squareup.picasso.Picasso;
 import com.ypms.R;
 import com.ypms.area.model.Area;
 import com.ypms.common.ContextUtils;
 import com.ypms.common.LazyBaseFragment;
-import com.ypms.common.ToolBarActivity;
 import com.ypms.common.recycleView.RecyclerItemClickListener;
+import com.ypms.customWidget.RoundRectImageView;
 import com.ypms.customWidget.ScreenPopupWindow;
 import com.ypms.home.Controll.HomeController;
 import com.ypms.home.HomeAdapter;
 import com.ypms.home.activity.MainActivity;
 import com.ypms.home.model.Mechanism;
-import com.ypms.home.model.MechanismPage;
 import com.ypms.net.RestBase;
 
 import java.util.ArrayList;
@@ -48,7 +47,6 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
     private LinearLayout llHeaderSort;
 
     private View rootView;
-    private boolean isCreatView;
     private MainActivity mActivity;
     private HomeAdapter homeAdapter;
     private boolean isLoad;
@@ -58,7 +56,29 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
     private ArrayList<Mechanism> list = new ArrayList<>();
 
     @BindView(R.id.banner)
-    ConvenientBanner banner;
+    ImageView banner;
+    @BindView(R.id.ll_parents)
+    LinearLayout llParents;
+    @BindView(R.id.ll_early)
+    LinearLayout llEarly;
+    @BindView(R.id.ll_foreign)
+    LinearLayout llForeign;
+    @BindView(R.id.ll_digital)
+    LinearLayout llDigital;
+    @BindView(R.id.ll_special)
+    LinearLayout llSpecial;
+    @BindView(R.id.rl_fix_more)
+    RelativeLayout rlFixMore;
+    @BindView(R.id.iv_top_left)
+    RoundRectImageView ivTopLeft;
+    @BindView(R.id.iv_top_right)
+    RoundRectImageView ivTopRight;
+    @BindView(R.id.iv_bottom_left)
+    RoundRectImageView ivBottomLeft;
+    @BindView(R.id.iv_bottom_cent)
+    RoundRectImageView ivBottomCent;
+    @BindView(R.id.iv_bottom_right)
+    RoundRectImageView ivBottomRight;
 
 
     @Override
@@ -78,14 +98,14 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
         rv = rootView.findViewById(R.id.rv);
         view = rootView.findViewById(R.id.view);
         llSort = rootView.findViewById(R.id.ll_tool_sort);
-        llBar = rootView.findViewById(R.id.ll_bar);
+        llBar = rootView.findViewById(R.id.ll_search);
+        llBar.getBackground().mutate().setAlpha(0);
         viewStub = rootView.findViewById(R.id.view_bac);
         rv.setPullRefreshEnabled(false);
         initView(inflater);
         initEvent();
         initDate();
         isLoad = true;
-        isCreatView = true;
         return rootView;
     }
 
@@ -94,6 +114,7 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
         View header2 = inflater.inflate(R.layout.layout_home_sort,null);
         llHeaderSort = header2.findViewById(R.id.ll_sort);
         ButterKnife.bind(this,header);
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         rv.setLayoutManager(layoutManager);
@@ -159,6 +180,18 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
         llSort.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                getPermission(new PermissionCall() {
+//                    @Override
+//                    public void success(List<Integer> list) {
+//                        Toast.makeText(mContext,list.size()+"成功数目",Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                    @Override
+//                    public void fail(List<Integer> list) {
+//                        Toast.makeText(mContext,list.size()+"失败数目",Toast.LENGTH_SHORT).show();
+//
+//                    }
+//                },Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA);
 
                 ContextUtils.showPopupWindow(screenPopupWindow,HomeFragment.this.view);
                 viewStub.setVisibility(View.VISIBLE);
@@ -211,6 +244,13 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
     }
 
     private void initDate() {
+        Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(banner);
+        Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(ivTopLeft);
+        Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(ivTopRight);
+        Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(ivBottomCent);
+        Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(ivBottomLeft);
+        Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(ivBottomRight);
+
         HomeController homeController = new HomeController();
         homeController.getHomeData(this, new HomeController.HomeDataListener() {
             @Override

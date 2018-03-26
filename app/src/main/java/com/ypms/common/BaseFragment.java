@@ -1,7 +1,10 @@
 package com.ypms.common;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
 import android.support.annotation.CheckResult;
@@ -11,6 +14,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
@@ -24,8 +28,12 @@ import com.ypms.R;
 import com.ypms.customWidget.CustomToast;
 import com.ypms.net.RestBase;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import io.reactivex.Observable;
 import io.reactivex.subjects.BehaviorSubject;
+import kr.co.namee.permissiongen.PermissionGen;
 
 /**
  * Created by Hero on 2018/3/1.
@@ -66,6 +74,58 @@ public abstract class BaseFragment extends Fragment implements LifecycleProvider
         gson = new GsonBuilder()
                 .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
                 .setDateFormat("yyyy-MM-dd'T'HH:mm:ss").create();
+    }
+
+
+    /**
+     * 动态权限申请部分
+     */
+
+    private PermissionCall permissionCall;
+
+    public void getPermission(PermissionCall permission, String... permissions) {
+        this.permissionCall = permission;
+        List<Integer> list = new ArrayList<>();
+        list.add(-1);
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (findDeniedPermissions(getActivity(), permissions).size() > 0) {
+                PermissionGen.with(this).addRequestCode(100).permissions(permissions).request();
+            } else {
+                permissionCall.success(list);
+            }
+        } else {
+            permissionCall.success(list);
+        }
+    }
+
+
+    @TargetApi(value = Build.VERSION_CODES.M)
+    public static List<String> findDeniedPermissions(Activity activity, String... permission) {
+        List<String> denyPermissions = new ArrayList<>();
+        for (String value : permission) {
+            if (activity.checkSelfPermission(value) != PackageManager.PERMISSION_GRANTED) {
+                denyPermissions.add(value);
+            }
+        }
+        return denyPermissions;
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions,int[] grantResults) {
+        List<Integer> successList = new ArrayList<>();
+        List<Integer> failList = new ArrayList<>();
+        for (int i = 0; i < grantResults.length; i++) {
+            if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
+                failList.add(i);
+            }else {
+                successList.add(i);
+            }
+        }
+        if (successList.size()>0)
+        permissionCall.success(successList);
+        if (failList.size()>0)
+        permissionCall.fail(failList);
     }
 
     /**

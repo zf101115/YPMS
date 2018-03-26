@@ -34,22 +34,25 @@ dependencies {
     compile 'com.jcodecraeer:xrecyclerview:1.5.9'
 
     compile 'com.bigkoo:convenientbanner:2.0.5'
+    compile 'com.lovedise:permissiongen:0.0.6'
 
     //butterknife
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    compile 'com.github.bumptech.glide:glide:4.3.1'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
+
+    compile 'com.squareup.picasso:picasso:2.5.2'
 
     //网络部分第三方库
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'io.reactivex.rxjava2:rxjava:2.0.4'
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+
+    //rxjava，rxlifecycle2用于管理任务
     compile 'com.trello.rxlifecycle2:rxlifecycle:2.1.0'
     compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.0.4'
 
     testCompile 'junit:junit:4.12'
 }
