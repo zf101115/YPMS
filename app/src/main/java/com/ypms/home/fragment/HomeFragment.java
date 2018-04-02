@@ -5,6 +5,7 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,8 +25,10 @@ import com.ypms.common.recycleView.RecyclerItemClickListener;
 import com.ypms.customWidget.RoundRectImageView;
 import com.ypms.customWidget.ScreenPopupWindow;
 import com.ypms.home.Controll.HomeController;
-import com.ypms.home.HomeAdapter;
+import com.ypms.home.adapter.HomeAdapter;
 import com.ypms.home.activity.MainActivity;
+import com.ypms.home.adapter.HomeRankingAdapter;
+import com.ypms.home.adapter.HomeTeacherAdapter;
 import com.ypms.home.model.Mechanism;
 import com.ypms.net.RestBase;
 
@@ -44,6 +47,7 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
     private XRecyclerView rv;
     private LinearLayout llSort;
     private LinearLayout llBar;
+    private LinearLayout llSearchText;
     private LinearLayout llHeaderSort;
 
     private View rootView;
@@ -79,6 +83,16 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
     RoundRectImageView ivBottomCent;
     @BindView(R.id.iv_bottom_right)
     RoundRectImageView ivBottomRight;
+    @BindView(R.id.rv_horizontal)
+    RecyclerView rvRanking;
+    @BindView(R.id.iv_select_top)
+    RoundRectImageView ivSelectTop;
+    @BindView(R.id.iv_select_center)
+    RoundRectImageView ivSelectCenter;
+    @BindView(R.id.iv_select_bottom)
+    RoundRectImageView ivSelectBottom;
+    @BindView(R.id.rv_teacher)
+    RecyclerView rvTeacher;
 
 
     @Override
@@ -98,7 +112,9 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
         rv = rootView.findViewById(R.id.rv);
         view = rootView.findViewById(R.id.view);
         llSort = rootView.findViewById(R.id.ll_tool_sort);
+        llSort.setVisibility(View.GONE);
         llBar = rootView.findViewById(R.id.ll_search);
+        llSearchText = rootView.findViewById(R.id.ll_search_text);
         llBar.getBackground().mutate().setAlpha(0);
         viewStub = rootView.findViewById(R.id.view_bac);
         rv.setPullRefreshEnabled(false);
@@ -122,6 +138,30 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
         rv.addHeaderView(header2);
         homeAdapter = new HomeAdapter(mContext);
         rv.setAdapter(homeAdapter);
+
+        LinearLayoutManager horizontalManager = new LinearLayoutManager(getActivity());
+        horizontalManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        LinearLayoutManager horizontalTeacherManager = new LinearLayoutManager(getActivity());
+        horizontalTeacherManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        rvRanking.setLayoutManager(horizontalManager);
+        rvTeacher.setLayoutManager(horizontalTeacherManager);
+        HomeRankingAdapter homeRankingAdapter = new HomeRankingAdapter(mContext);
+        HomeTeacherAdapter homeTeacherAdapter = new HomeTeacherAdapter(mContext);
+        List<Mechanism> list = new ArrayList<>();
+        Mechanism mechanism = new Mechanism("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522734328&di=5067351a86cf85b3337c7641ad55279a&imgtype=jpg&er=1&src=http%3A%2F%2Fsem.g3img.com%2Fg3img%2Fweiwuguoji%2F20140711161058_41758.jpg");
+        Mechanism mechanism1 = new Mechanism("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg");
+        Mechanism mechanism2 = new Mechanism("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522734328&di=5067351a86cf85b3337c7641ad55279a&imgtype=jpg&er=1&src=http%3A%2F%2Fsem.g3img.com%2Fg3img%2Fweiwuguoji%2F20140711161058_41758.jpg");
+        Mechanism mechanism3 = new Mechanism("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg");
+        Mechanism mechanism4 = new Mechanism("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522734328&di=5067351a86cf85b3337c7641ad55279a&imgtype=jpg&er=1&src=http%3A%2F%2Fsem.g3img.com%2Fg3img%2Fweiwuguoji%2F20140711161058_41758.jpg");
+        list.add(mechanism);
+        list.add(mechanism1);
+        list.add(mechanism2);
+        list.add(mechanism3);
+        list.add(mechanism4);
+        homeRankingAdapter.setItems(list);
+        homeTeacherAdapter.setItems(list);
+        rvTeacher.setAdapter(homeTeacherAdapter);
+        rvRanking.setAdapter(homeRankingAdapter);
     }
 
 
@@ -175,6 +215,7 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
                 setSortVisible();
+                setSearchAlpha();
             }
         });
         llSort.setOnClickListener(new View.OnClickListener() {
@@ -219,12 +260,32 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
         });
 
     }
+
+    private void setSearchAlpha() {
+
+    }
+
     private void setSortVisible() {
         int[] tabSort = new int[2];
+        int[] bannerLocation = new int[2];
+        banner.getLocationOnScreen(bannerLocation);
         llHeaderSort.getLocationOnScreen(tabSort);
-        int toolBarHeight = llBar.getMeasuredHeight();
-        int topY = tabSort[1]-toolBarHeight-getNotificationHigh();
-        llSort.setVisibility(topY<=0?View.VISIBLE:View.GONE);
+        int searchHeight = llBar.getMeasuredHeight();
+        int topY = tabSort[1]-getNotificationHigh()-searchHeight;
+        llSort.setVisibility(topY<=0&&rv.getChildCount()>1&&bannerLocation[1]-getNotificationHigh()<0?View.VISIBLE:View.GONE);
+        int endOffset =260;
+        if (Math.abs(bannerLocation[1]-getNotificationHigh())<=0){
+            llBar.getBackground().mutate().setAlpha(0);
+            llSearchText.setBackgroundDrawable(getResources().getDrawable(R.drawable.search_edit_white));
+        }else if (rv.getChildLayoutPosition(rv.getChildAt(0))>1||Math.abs(bannerLocation[1]-getNotificationHigh())>endOffset){
+            llBar.getBackground().mutate().setAlpha(255);
+            llSearchText.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_grey_grey_radius));
+        }else if (Math.abs(bannerLocation[1]-getNotificationHigh())>0&&Math.abs(bannerLocation[1]-getNotificationHigh())<endOffset){
+            float precent = (float) (Math.abs(bannerLocation[1]-getNotificationHigh())) / endOffset;
+            int alpha = Math.round(precent * 255);
+            llBar.getBackground().mutate().setAlpha(alpha);
+            llSearchText.setBackgroundDrawable(getResources().getDrawable(R.drawable.search_edit_white));
+        }
     }
 
 
@@ -247,9 +308,12 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
         Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(banner);
         Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(ivTopLeft);
         Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(ivTopRight);
-        Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(ivBottomCent);
-        Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(ivBottomLeft);
-        Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(ivBottomRight);
+        Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(ivSelectTop);
+        Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(ivSelectBottom);
+        Picasso.with(mContext).load("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522734328&di=5067351a86cf85b3337c7641ad55279a&imgtype=jpg&er=1&src=http%3A%2F%2Fsem.g3img.com%2Fg3img%2Fweiwuguoji%2F20140711161058_41758.jpg").into(ivBottomCent);
+        Picasso.with(mContext).load("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522734328&di=5067351a86cf85b3337c7641ad55279a&imgtype=jpg&er=1&src=http%3A%2F%2Fsem.g3img.com%2Fg3img%2Fweiwuguoji%2F20140711161058_41758.jpg").into(ivSelectCenter);
+        Picasso.with(mContext).load("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522734328&di=5067351a86cf85b3337c7641ad55279a&imgtype=jpg&er=1&src=http%3A%2F%2Fsem.g3img.com%2Fg3img%2Fweiwuguoji%2F20140711161058_41758.jpg").into(ivBottomLeft);
+        Picasso.with(mContext).load("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522734328&di=5067351a86cf85b3337c7641ad55279a&imgtype=jpg&er=1&src=http%3A%2F%2Fsem.g3img.com%2Fg3img%2Fweiwuguoji%2F20140711161058_41758.jpg").into(ivBottomRight);
 
         HomeController homeController = new HomeController();
         homeController.getHomeData(this, new HomeController.HomeDataListener() {

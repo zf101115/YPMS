@@ -5,9 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.amap.api.maps2d.MapView;
 import com.ypms.R;
 import com.ypms.common.BaseFragment;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -16,6 +18,8 @@ import butterknife.ButterKnife;
 
 public class DiscoverFragment extends BaseFragment {
 
+    @BindView(R.id.map)
+    MapView map;
 
     private View rootView;
     @Override
@@ -27,6 +31,7 @@ public class DiscoverFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.bind(this,rootView);
+        map.onCreate(savedInstanceState);
         return rootView;
     }
 }

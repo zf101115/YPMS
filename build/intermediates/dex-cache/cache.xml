@@ -2,6 +2,222 @@
 <items version="2" >
 
     <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/895f9ebed2034a5986547af97a18ff2f1596012f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="f97cf85b0fe70d37a705111dafa6b1b418ea1650">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_740140c31a2ce03a7b296986d55224dfc8af95f7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/logging-interceptor/3.4.1/381fc1096ba65040d8e80ea43b2e1d9bad02345e/logging-interceptor-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="381fc1096ba65040d8e80ea43b2e1d9bad02345e">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/logging-interceptor-3.4.1_75515e28f4e89f198c6a5b8b51d54407709df917.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.2.0/41e67dba73c3347e4503761642c39d0e06ca1f2/retrofit-2.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="041e67dba73c3347e4503761642c39d0e06ca1f2">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/retrofit-2.2.0_aaa660fa56f0b990a7bbea5c7b92203d72789b34.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.0.0/a2d487452376193fc8c103dd2b9bd5f2b1b44563/common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/common-1.0.0_20dc4c3a84001a930f2ce6aba0b960f38f43f693.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/picasso-2.5.2_a6fb7c84813d21d077ca84fa1d984c99e25db443.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/64c139c3a85b971b64b991f54d3cbf225f2a80ae/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6f4138a4e065826cb044d49faea4cfd7191773d1">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_9526470fdaff910183bea21a8dd7dc3defbc2f8e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/okhttp-3.6.0_56c5ef2e53e4e856643c82b7b6c457beb966e453.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/adapter-rxjava2/2.2.0/3ee0e527143abbe130ddba4c1fa6c4be5d66ed5c/adapter-rxjava2-2.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3ee0e527143abbe130ddba4c1fa6c4be5d66ed5c">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/adapter-rxjava2-2.2.0_44bc79e623687d7880868e01583e416d0f47e8f8.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhangxiao/Project/YPMS/app/libs/Amap_2DMap_V5.2.0_20170627.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="15d491b0412f57284157d356bfcb9d6ea017226f">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/transforms/dex/debug/folders/1000/2/Amap_2DMap_V5.2.0_20170627_6b289509b9295f18df4f2240670a5a7daf8964ce/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/26.1.0/814258103cf26a15fcc26ecce35f5b7d24b73f8/support-annotations-26.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="0814258103cf26a15fcc26ecce35f5b7d24b73f8">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/support-annotations-26.1.0_324fbd52b8e0655fe24fb24890b8a3d63866859b.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhangxiao/Project/YPMS/app/libs/AMap_Search_V5.7.0_20171229.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="9ee258e99eda4c1c39874c9c90e8c6962c3629ab">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/transforms/dex/debug/folders/1000/2/AMap_Search_V5.7.0_20171229_8b09d368fe363fbfff1efb1a47c0e9840d7711ba/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.0.2/f8d87f15b94b8d74e7ccf61d7eedb558811cdb30/converter-gson-2.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/converter-gson-2.0.2_aec392352f529797087580b249b680fe77f9c422.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhangxiao/Project/YPMS/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="14caf3c16079775bd2b8f86a5dd0a7aaa23190bb">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_aa6a921afea6f6ab496829be8b446461f1e85c4b/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/320dee28ef69bda6d24faa459d496537bb175564/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_fd8015c73c7aee74cc8c0541612c889e85ee32de.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/946b364dc9fa60e215ae2e7b9ba22357cc1757d5/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="a1589af4546e0299f3e0c77de3215ecfd3a0e19d">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_08f68580bbff909442a835d03ec91d0a52a932e4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.0.0/e414a4cb28434e25c4f6aa71426eb20cf4874ae9/common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e414a4cb28434e25c4f6aa71426eb20cf4874ae9">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/common-1.0.0_71c25a2500f1bbb5ff62c078dc152c48e4d57bca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.1.0/2fdf84dedcaaeabb9d70cde9dbb8aad4eccb80a1/rxjava-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="2fdf84dedcaaeabb9d70cde9dbb8aad4eccb80a1">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/rxjava-2.1.0_3ef9119c1496bc17bbc93b268d9179f3f36e4b11.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.0/14b8c877d98005ba3941c9257cfe09f6ed0e0d74/reactive-streams-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="14b8c877d98005ba3941c9257cfe09f6ed0e0d74">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/reactive-streams-1.0.0_ef1b8cf039c5f93c5ab47e5654856ecc451e6266.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/a867f95c084eb7a0e067cbf23c6c9e9c6659245f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="4119ea97a7191ff9b8f33b534ea220448f62f491">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_91e4b1698689c864e8625420ca0bffa3d06f09f7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/b9b9df120811da594d8a661c2e768ffee246771e/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b99798f653c15a17af6779bb9f01a66f2ee6e6ef">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_6642df5206fc598290393029d80deb5ffa8f9c21.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/e435998db272e70efb231660c679a041425289d7/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_2f0721028f7a8c3ac511ca66b4db61604c89f04a.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhangxiao/Project/YPMS/app/libs/AMap_Location_V3.8.0_20180201.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e6f7bc37e0cd684f23fa8d5ce5247d90aae5685f">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/transforms/dex/debug/folders/1000/2/AMap_Location_V3.8.0_20180201_95d0016bc5abafce92a1b612e18545a02c9fd3db/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/489f2a7fdaba1f6625abd8b527e18fe03de00aa1/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="40392f30a601db5675cdf18192aab013d6fee6ec">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_23a36eb330d2cd46a2b9c6a8fbe6e3cbc34efd35.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/f6146b0648963bafd4158280bf5703ba84758247/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="7efef32744ca4a436492d5cf28c08698cc2af256">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_259ea2c348801cf65557e940b09c1179245268c3.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="/Users/zhangxiao/Project/YPMS/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
@@ -11,13 +227,40 @@
         <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_154cd6c939af5fb0eb61c1b73aea360695dd23a5/classes.dex" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/zhangxiao/Project/YPMS/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/a34e2ddbf6bfc2ce14f7f21418787237d4cd88c9/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.1"
-        sha1="132ac356f990a0c27ee223485cb366655fb4eb2b">
-        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_aa6a921afea6f6ab496829be8b446461f1e85c4b/classes.dex" />
+        sha1="2442771a5590dd4eb4bce00c2e9dca9e22e4c963">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_55d2ab6bc5c76da8fbfda1279c2ff5acefadac60.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.11.0/840897fcd7223a8143f1d9b6f69714e7be34fd50/okio-1.11.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="840897fcd7223a8143f1d9b6f69714e7be34fd50">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/okio-1.11.0_35471e033946274ca49d5eabc5f3294b64badfe4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.8.1/bc373fb6bc7bca3035041b924f158fd2b946ee8d/butterknife-annotations-8.8.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="bc373fb6bc7bca3035041b924f158fd2b946ee8d">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/butterknife-annotations-8.8.1_ba3bdf12425a1ccb908c862fda904b753d8950a5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/17b6654a7fcd4b7efc507abb2d52e94254efe1a0/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="508f50705b4fde51a16259f29c854201a3044516">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_19f8d9962f0d259b98b8ebfc95151ed7d60f46bd.jar" />
     </item>
     <item
         is-multidex="true"
@@ -27,6 +270,96 @@
         revision="26.0.1"
         sha1="b99798f653c15a17af6779bb9f01a66f2ee6e6ef">
         <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6642df5206fc598290393029d80deb5ffa8f9c21/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/7ce034d202e413005e83fe9691eb44f490b37649/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6a2bcb61342d09fe9acf55c9daf63961c8866cc0">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_ed4ce1770aa392aafef3221ad437d42e2a42cc63.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.gradle/caches/modules-2/files-2.1/com.trello.rxlifecycle2/rxlifecycle/2.1.0/ceb847e21d527d2ef285cd3dd187379220ffb223/rxlifecycle-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="ceb847e21d527d2ef285cd3dd187379220ffb223">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/rxlifecycle-2.1.0_9809b8e660770bbaa5d9ec093a19b978779a4f69.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/810436c68add3763c0ee4f9a45d8e086b67ccaf7/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e20f3c5e0e1bdbcf0edad8b16771497b36f68875">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_64e984668b3ad563c7023a6e9e5918ba4af0b526.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/0c22a6d5d9de59ec24241e2ca8300737a2c24311/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="634ccf52c8b58a9eafd4a574b38d165e8648a574">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_8a27d06b1f05957d26bffea02a0f4966c37ce20f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/45e4418a0287c2b0b1d83faffc9a8b6105a5384a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="f428e2fbc9ed0b297e3a3f420e51e6982f66822d">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_65fc708e8d3d78dcfe5d855330207091cb3d22de.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/fc3f7344c5ae9673a57a9c21d40374d5c402b9d6/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="1f9862252bcf6c3537e0f85e048489f068a9d69a">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_4a403cff23fbbb951137d5485cb22ae71f213eb2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/be5f7a34bfe83850833e4e7c75a2ccf9f5335970/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_23c63dc0c08a6cf5109302b299d91f8d3e44fdd5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/d3d10e3fa366e073f2c1f8d6e6314be6fa873204/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b62fdc4cfef174c1e456014195c83fa7de7dc041">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_b4b15704bb5af27923744d9cb996d6a9b6030e66.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.6.1/b9d63507329a7178e026fc334f87587ee5070ac5/gson-2.6.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/gson-2.6.1_639a9b7abe3e6d68dfd0028a56e9f7ae10e51870.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangxiao/.android/build-cache/5bda0d681a49d17cced4ed05009b7377895a7d3d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="233f60a165ae622c8b36731502ebbda0f65e1930">
+        <dex dex="/Users/zhangxiao/Project/YPMS/app/build/intermediates/pre-dexed/release/classes_fa513c0b5319b2636ec1ea3c4c72d36418a8cbab.jar" />
     </item>
 
 </items>

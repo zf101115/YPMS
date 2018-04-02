@@ -11,4 +11,5 @@
     <color name="text_search_grey">#666666</color>
     <color name="red">#ffff0000</color>
     <color name="bg_default">#f8f8f8</color>
+    <color name="black">#000000</color>
 </resources>

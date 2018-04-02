@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/rl_fix_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="精选课程"
+            android:textSize="16sp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_empty"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    <com.ypms.customWidget.RoundRectImageView
+        android:id="@+id/iv_select_top"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="150dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:text="dinging我让给弄 goring末尾没我们我让给人我让给g我让给弄 goring末尾没我们我让给人我g我让给弄 goring末尾没我们我让给人我"/>
+
+    <com.ypms.customWidget.RoundRectImageView
+        android:id="@+id/iv_select_center"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="150dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:text="dinging我让给弄 goring末尾没我们我让给人我让给g我让给弄 goring末尾没我们我让给人我g我让给弄 goring末尾没我们我让给人我"/>
+    <com.ypms.customWidget.RoundRectImageView
+        android:id="@+id/iv_select_bottom"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="150dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:text="dinging我让给弄 goring末尾没我们我让给人我让给g我让给弄 goring末尾没我们我让给人我g我让给弄 goring末尾没我们我让给人我"/>
+</merge>

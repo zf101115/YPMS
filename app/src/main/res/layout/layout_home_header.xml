@@ -14,8 +14,23 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:scrollbars="none"
-            android:background="@color/bg_default">
+            android:background="@color/colorGrey_E6">
             <include layout="@layout/layout_home_kind"/>
         </HorizontalScrollView>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:padding="9dp"
+        android:scrollbars="none"/>
     <include layout="@layout/layout_home_fixed"/>
+    <include layout="@layout/layout_home_select"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_teacher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGrey_E6"
+        android:paddingTop="9dp"
+        android:paddingBottom="9dp"
+        android:scrollbars="none"/>
 </LinearLayout>
