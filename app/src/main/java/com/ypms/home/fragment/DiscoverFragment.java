@@ -18,8 +18,8 @@ import butterknife.ButterKnife;
 
 public class DiscoverFragment extends BaseFragment {
 
-    @BindView(R.id.map)
-    MapView map;
+//    @BindView(R.id.map)
+//    MapView map;
 
     private View rootView;
     @Override
@@ -31,7 +31,6 @@ public class DiscoverFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.bind(this,rootView);
-        map.onCreate(savedInstanceState);
         return rootView;
     }
 }

@@ -3,34 +3,66 @@
     android:layout_width="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    android:layout_height="38dp">
+    android:layout_height="39dp">
     <LinearLayout
         android:id="@+id/ll_sort"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp">
-        <TextView
+        android:layout_height="38dp">
+        <LinearLayout
+            android:id="@+id/ll_near"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="附近"
+            android:layout_weight="1"
             android:gravity="center"
-            android:layout_weight="1"/>
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="附近"
+                android:gravity="center"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_pb_pulldown"/>
+        </LinearLayout>
         <View
             style="@style/div_horizontal_line"/>
-        <TextView
+        <LinearLayout
+            android:id="@+id/ll_kind"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="类型"
+            android:layout_weight="1"
             android:gravity="center"
-            android:layout_weight="1"/>
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="类型"
+                android:gravity="center"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_pb_pulldown"/>
+        </LinearLayout>
         <View
             style="@style/div_horizontal_line"/>
-        <TextView
+        <LinearLayout
+            android:id="@+id/ll_select"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="center"
-            android:text="筛选"
-            android:layout_weight="1"/>
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="筛选"
+                android:gravity="center"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_pb_pulldown"/>
+        </LinearLayout>
     </LinearLayout>
     <View style="@style/div_vertical_line"/>
 </LinearLayout>

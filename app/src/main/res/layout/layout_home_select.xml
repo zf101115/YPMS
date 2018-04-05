@@ -8,16 +8,19 @@
         android:id="@+id/rl_fix_more"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="6dp">
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:layout_marginTop="30dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="精选课程"
+            android:textColor="#333333"
             android:textSize="16sp"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_star_empty"
+            android:src="@drawable/ic_home_more"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"/>
     </RelativeLayout>
@@ -35,13 +38,47 @@
         android:maxLines="2"
         android:ellipsize="end"
         android:text="dinging我让给弄 goring末尾没我们我让给人我让给g我让给弄 goring末尾没我们我让给人我g我让给弄 goring末尾没我们我让给人我"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_home_class_people"
+            android:drawablePadding="5dp"
+            android:text="儿童"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_home_class_date"
+            android:drawablePadding="5dp"
+            android:layout_marginLeft="15dp"
+            android:text="0基础"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_home_class_kind"
+            android:drawablePadding="5dp"
+            android:layout_marginLeft="15dp"
+            android:text="1-4人小班"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_home_class_teacher"
+            android:drawablePadding="5dp"
+            android:layout_marginLeft="15dp"
+            android:text="外籍教师"/>
+    </LinearLayout>
 
     <com.ypms.customWidget.RoundRectImageView
         android:id="@+id/iv_select_center"
         android:layout_width="match_parent"
         android:layout_margin="10dp"
         android:layout_height="150dp" />
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,6 +88,42 @@
         android:maxLines="2"
         android:ellipsize="end"
         android:text="dinging我让给弄 goring末尾没我们我让给人我让给g我让给弄 goring末尾没我们我让给人我g我让给弄 goring末尾没我们我让给人我"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_home_class_people"
+            android:drawablePadding="5dp"
+            android:text="儿童"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_home_class_date"
+            android:drawablePadding="5dp"
+            android:layout_marginLeft="15dp"
+            android:text="0基础"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_home_class_kind"
+            android:drawablePadding="5dp"
+            android:layout_marginLeft="15dp"
+            android:text="1-4人小班"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_home_class_teacher"
+            android:drawablePadding="5dp"
+            android:layout_marginLeft="15dp"
+            android:text="外籍教师"/>
+    </LinearLayout>
     <com.ypms.customWidget.RoundRectImageView
         android:id="@+id/iv_select_bottom"
         android:layout_width="match_parent"
@@ -65,4 +138,40 @@
         android:maxLines="2"
         android:ellipsize="end"
         android:text="dinging我让给弄 goring末尾没我们我让给人我让给g我让给弄 goring末尾没我们我让给人我g我让给弄 goring末尾没我们我让给人我"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="30dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_home_class_people"
+            android:drawablePadding="5dp"
+            android:text="儿童"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_home_class_date"
+            android:drawablePadding="5dp"
+            android:layout_marginLeft="15dp"
+            android:text="0基础"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_home_class_kind"
+            android:drawablePadding="5dp"
+            android:layout_marginLeft="15dp"
+            android:text="1-4人小班"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_home_class_teacher"
+            android:drawablePadding="5dp"
+            android:layout_marginLeft="15dp"
+            android:text="外籍教师"/>
+    </LinearLayout>
 </merge>

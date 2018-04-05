@@ -1,39 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:padding="12dp"
     android:layout_height="match_parent">
     <RelativeLayout
         android:id="@+id/rl_fix_more"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:padding="6dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="初升骄阳"
+            android:textColor="#333333"
             android:textSize="16sp"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_star_empty"
+            android:src="@drawable/ic_home_more"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"/>
     </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp">
         <com.ypms.customWidget.RoundRectImageView
             android:id="@+id/iv_top_left"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="98dp"/>
+            android:layout_height="108dp"/>
         <com.ypms.customWidget.RoundRectImageView
             android:id="@+id/iv_top_right"
             android:layout_width="0dp"
-            android:layout_height="98dp"
+            android:layout_height="108dp"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"/>
     </LinearLayout>
@@ -46,18 +48,18 @@
         <com.ypms.customWidget.RoundRectImageView
             android:id="@+id/iv_bottom_left"
             android:layout_width="0dp"
-            android:layout_height="98dp"
+            android:layout_height="108dp"
             android:layout_weight="1"/>
         <com.ypms.customWidget.RoundRectImageView
             android:id="@+id/iv_bottom_cent"
             android:layout_width="0dp"
-            android:layout_height="98dp"
+            android:layout_height="108dp"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"/>
         <com.ypms.customWidget.RoundRectImageView
             android:id="@+id/iv_bottom_right"
             android:layout_width="0dp"
-            android:layout_height="98dp"
+            android:layout_height="108dp"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"/>
     </LinearLayout>

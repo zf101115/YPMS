@@ -25,14 +25,14 @@ public class ContextUtils {
     }
 
     public static void showPopupWindow(PopupWindow pop,View view){
-        if (android.os.Build.VERSION.SDK_INT > android.os.Build.VERSION_CODES.M) {
+//        if (android.os.Build.VERSION.SDK_INT > android.os.Build.VERSION_CODES.M) {
             int[] location = new int[2];
             view.getLocationOnScreen(location);
             int y = location[1] ;
             pop.showAtLocation(view, Gravity.NO_GRAVITY,0,y);
-        }else {
-            pop.showAsDropDown(view);
-        }
+//        }else {
+//            pop.showAsDropDown(view);
+//        }
     }
 
 }

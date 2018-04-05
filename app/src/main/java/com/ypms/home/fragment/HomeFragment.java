@@ -15,15 +15,21 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import com.bigkoo.convenientbanner.ConvenientBanner;
+import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.squareup.picasso.Picasso;
 import com.ypms.R;
 import com.ypms.area.model.Area;
+import com.ypms.common.BannerHolderView;
 import com.ypms.common.ContextUtils;
 import com.ypms.common.LazyBaseFragment;
+import com.ypms.common.bannerClickLinster;
 import com.ypms.common.recycleView.RecyclerItemClickListener;
 import com.ypms.customWidget.RoundRectImageView;
 import com.ypms.customWidget.ScreenPopupWindow;
+import com.ypms.customWidget.SinglePopupWindow;
 import com.ypms.home.Controll.HomeController;
 import com.ypms.home.adapter.HomeAdapter;
 import com.ypms.home.activity.MainActivity;
@@ -49,18 +55,27 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
     private LinearLayout llBar;
     private LinearLayout llSearchText;
     private LinearLayout llHeaderSort;
+    private LinearLayout llHeaderNear;
+    private LinearLayout llHeaderKind;
+    private LinearLayout llHeaderSelect;
+    private LinearLayout llToolNear;
+    private LinearLayout llToolKind;
+    private LinearLayout llToolSelect;
 
     private View rootView;
     private MainActivity mActivity;
     private HomeAdapter homeAdapter;
     private boolean isLoad;
     private ScreenPopupWindow screenPopupWindow;
+    private SinglePopupWindow singlePopupWindow;
     private View view;
     private ViewStub viewStub;
     private ArrayList<Mechanism> list = new ArrayList<>();
 
+    private List<String> pics = new ArrayList<>();
+
     @BindView(R.id.banner)
-    ImageView banner;
+    ConvenientBanner banner;
     @BindView(R.id.ll_parents)
     LinearLayout llParents;
     @BindView(R.id.ll_early)
@@ -112,6 +127,9 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
         rv = rootView.findViewById(R.id.rv);
         view = rootView.findViewById(R.id.view);
         llSort = rootView.findViewById(R.id.ll_tool_sort);
+        llToolNear = rootView.findViewById(R.id.ll_near);
+        llToolKind = rootView.findViewById(R.id.ll_kind);
+        llToolSelect = rootView.findViewById(R.id.ll_select);
         llSort.setVisibility(View.GONE);
         llBar = rootView.findViewById(R.id.ll_search);
         llSearchText = rootView.findViewById(R.id.ll_search_text);
@@ -129,6 +147,9 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
         View header = inflater.inflate(R.layout.layout_home_header,null);
         View header2 = inflater.inflate(R.layout.layout_home_sort,null);
         llHeaderSort = header2.findViewById(R.id.ll_sort);
+        llHeaderNear = header2.findViewById(R.id.ll_near);
+        llHeaderSelect = header2.findViewById(R.id.ll_kind);
+        llHeaderKind = header2.findViewById(R.id.ll_select);
         ButterKnife.bind(this,header);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -194,6 +215,7 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
         areaList.add(area7);
 
         screenPopupWindow = new ScreenPopupWindow(mContext,areaList,Lists);
+        singlePopupWindow = new SinglePopupWindow(mContext,areaList);
         screenPopupWindow.setSelectItemListener(this);
         homeAdapter.setOnItemClickListener(new RecyclerItemClickListener() {
             @Override
@@ -218,7 +240,7 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
                 setSearchAlpha();
             }
         });
-        llSort.setOnClickListener(new View.OnClickListener() {
+        llToolNear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //                getPermission(new PermissionCall() {
@@ -238,16 +260,45 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
                 viewStub.setVisibility(View.VISIBLE);
             }
         });
-        llHeaderSort.setOnClickListener(new View.OnClickListener() {
+        llToolKind.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                int firstItem = rv.getChildLayoutPosition(rv.getChildAt(0));
-                int movePosition = 2 - firstItem;
-                if (movePosition >= 0 && movePosition < rv.getChildCount()) {
-                    int top = rv.getChildAt(movePosition).getTop();
-                    rv.smoothScrollBy(0, top);
-                }
+            public void onClick(View v) {
+                ContextUtils.showPopupWindow(singlePopupWindow,HomeFragment.this.view);
+                viewStub.setVisibility(View.VISIBLE);
+            }
+        });
+
+        llToolSelect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ContextUtils.showPopupWindow(singlePopupWindow,HomeFragment.this.view);
+                viewStub.setVisibility(View.VISIBLE);
+            }
+        });
+        llHeaderNear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setRvPosition();
                 ContextUtils.showPopupWindow(screenPopupWindow,HomeFragment.this.view);
+                viewStub.setVisibility(View.VISIBLE);
+            }
+        });
+
+
+        llHeaderKind.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setRvPosition();
+                ContextUtils.showPopupWindow(singlePopupWindow,HomeFragment.this.view);
+                viewStub.setVisibility(View.VISIBLE);
+            }
+        });
+
+        llHeaderSelect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setRvPosition();
+                ContextUtils.showPopupWindow(singlePopupWindow,HomeFragment.this.view);
                 viewStub.setVisibility(View.VISIBLE);
             }
         });
@@ -258,7 +309,22 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
                 viewStub.setVisibility(View.GONE);
             }
         });
+        singlePopupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                viewStub.setVisibility(View.GONE);
+            }
+        });
 
+    }
+
+    private void setRvPosition() {
+        int firstItem = rv.getChildLayoutPosition(rv.getChildAt(0));
+        int movePosition = 2 - firstItem;
+        if (movePosition >= 0 && movePosition < rv.getChildCount()) {
+            int top = rv.getChildAt(movePosition).getTop();
+            rv.smoothScrollBy(0, top);
+        }
     }
 
     private void setSearchAlpha() {
@@ -305,7 +371,23 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
     }
 
     private void initDate() {
-        Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(banner);
+        pics.add("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg");
+        pics.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522734328&di=5067351a86cf85b3337c7641ad55279a&imgtype=jpg&er=1&src=http%3A%2F%2Fsem.g3img.com%2Fg3img%2Fweiwuguoji%2F20140711161058_41758.jpg");
+        banner.setPages(new CBViewHolderCreator<BannerHolderView>() {
+            @Override
+            public BannerHolderView createHolder() {
+                return new BannerHolderView(new bannerClickLinster <String>() {
+                    @Override
+                    public void OnItemClick(String s, int position) {
+
+                    }
+                });
+            }
+        },pics)
+//        .setPointViewVisible(true)
+        .startTurning(4000);
+
+//        Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(banner);
         Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(ivTopLeft);
         Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(ivTopRight);
         Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(ivSelectTop);
@@ -359,5 +441,17 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
         Lists.add(are2);
         Lists.add(are3);
         screenPopupWindow.setListData(Lists);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        banner.startTurning(4000);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        banner.stopTurning();
     }
 }

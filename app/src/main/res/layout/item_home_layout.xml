@@ -8,16 +8,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
         android:orientation="horizontal">
         <ImageView
             android:id="@+id/iv_pic"
-            android:layout_width="0dp"
+            android:layout_width="100dp"
             android:layout_height="80dp"
-            android:src="@color/color_grey_99"
-            android:layout_weight="1"/>
+            android:src="@color/color_grey_99"/>
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:orientation="vertical"
             android:layout_marginLeft="15dp"
             android:layout_height="wrap_content">
@@ -30,17 +30,41 @@
                 android:maxLines="1"
                 android:ellipsize="end"
                 android:text="美吉姆早教（古墩早教中心)"/>
-            <com.ypms.customWidget.StartView
-                android:id="@+id/start"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                start:isClickable="false"
-                start:starEmpty="@drawable/ic_star_empty"
-                start:starFill="@drawable/ic_star_full"
-                start:starCount="5"
-                android:layout_marginTop="3dp"
-                start:starDistance="3dp"
-                start:starSize="12dp"/>
+                android:gravity="center_vertical"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal">
+                <com.ypms.customWidget.StartView
+                    android:id="@+id/start"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    start:isClickable="false"
+                    start:starEmpty="@drawable/ic_star_empty"
+                    start:starFill="@drawable/ic_star_full"
+                    start:starCount="5"
+                    start:starDistance="3dp"
+                    start:starSize="12dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:textSize="12sp"
+                    android:text="4.9"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:textSize="12sp"
+                    android:text="高新文教区"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="6dp"
+                    android:text="2.6km"/>
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -48,80 +72,69 @@
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/tv_area"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:maxLines="1"
                     android:ellipsize="end"
                     style="@style/text_small"
-                    android:text="高新文教区sdsfefre"/>
+                    android:text="幼儿早教"/>
                 <TextView
                     android:id="@+id/tv_model"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:maxLines="1"
                     android:ellipsize="end"
                     style="@style/text_small"
-                    android:text="幼儿早教"/>
+                    android:text="启蒙导师"/>
+            </LinearLayout>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="4dp"
+               android:text="联系电话：1888888888"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/home_list_tag"
+                    android:textSize="10sp"
+                    android:textColor="@color/red"
+                    android:gravity="center"
+                    android:text="免费"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="免费试听面给试听，哈哈哈面给试听，哈哈哈"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:gravity="center_vertical"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/tv_address"
-                    android:layout_width="0dp"
-                    android:layout_weight="3"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    style="@style/text_small"
+                    android:background="@drawable/home_list_tag"
+                    android:textSize="10sp"
+                    android:textColor="@color/red"
+                    android:gravity="center"
+                    android:text="特惠"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:maxLines="1"
                     android:ellipsize="end"
-                    android:gravity="center"
-                    android:drawableLeft="@drawable/ic_location"
-                    android:drawablePadding="4dp"
-                    android:text="西湖区紫金花路2号联合大厦"/>
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="12dp"
-                    android:background="@color/text_search_grey"/>
-                <TextView
-                    android:id="@+id/tv_distance"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="11.2km"
-                    android:layout_marginLeft="5dp"
-                    style="@style/text_small"
-                    android:maxLines="1"
-                    android:ellipsize="end"/>
+                    android:text="只要998，只要998,只要998要998，只要998,只"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-    <TextView
-        android:id="@+id/tv_active_top"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:maxLines="1"
-        android:ellipsize="end"
-        android:padding="3dp"
-        android:drawablePadding="3dp"
-        android:drawableLeft="@drawable/shape_round_red"
-        android:text="免费试听：免费试听免费试听免费试听免费试听"/>
-    <TextView
-        android:id="@+id/tv_active_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:maxLines="1"
-        android:ellipsize="end"
-        android:padding="3dp"
-        android:drawablePadding="3dp"
-        android:drawableLeft="@drawable/shape_round_red"
-        android:text="优惠团购：优惠团购优惠团购优惠团购优惠团购"
-        />
     <View
         style="@style/div_vertical_line"/>
 

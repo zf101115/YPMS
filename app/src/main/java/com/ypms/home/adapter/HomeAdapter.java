@@ -54,14 +54,7 @@ public class HomeAdapter extends BaseRecyclerAdapter {
         TextView tvArea;
         @BindView(R.id.tv_model)
         TextView tvModel;
-        @BindView(R.id.tv_address)
-        TextView tvAddress;
-        @BindView(R.id.tv_distance)
-        TextView tvDistance;
-        @BindView(R.id.tv_active_top)
-        TextView tvActiveTop;
-        @BindView(R.id.tv_active_bottom)
-        TextView tvActiveBottom;
+
 
         public ViewHolder(View itemView) {
             super(itemView, mItemClickListener);

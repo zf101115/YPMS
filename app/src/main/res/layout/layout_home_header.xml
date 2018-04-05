@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <ImageView
+    <!--<ImageView-->
+        <!--android:id="@+id/banner"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="180dp"-->
+        <!--android:scaleType="fitXY"/>-->
+    <com.bigkoo.convenientbanner.ConvenientBanner
         android:id="@+id/banner"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:scaleType="fitXY"/>
+        android:layout_height="200dp"
+        app:canLoop="true"/>
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:scrollbars="none"
@@ -20,8 +26,8 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:padding="9dp"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
         android:scrollbars="none"/>
     <include layout="@layout/layout_home_fixed"/>
     <include layout="@layout/layout_home_select"/>
