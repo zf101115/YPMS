@@ -2,7 +2,6 @@
 <android.support.design.widget.AppBarLayout android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:theme="@style/AppTheme.AppBarOverlay"
     xmlns:android="http://schemas.android.com/apk/res/android">
 <android.support.v7.widget.Toolbar
     android:id="@+id/toolbar"
@@ -16,7 +15,7 @@
         android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_arror"/>
+        android:src="@drawable/ic_pb_back"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,7 +35,7 @@
             <View
                 android:layout_width="10dp"
                 android:layout_height="2dp"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="3dp"
                 android:background="@color/colorPrimary"/>
         </LinearLayout>
         <LinearLayout
@@ -53,7 +52,7 @@
             <View
                 android:layout_width="10dp"
                 android:layout_height="2dp"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="3dp"
                 android:visibility="gone"
                 android:background="@color/colorPrimary"/>
         </LinearLayout>
@@ -71,7 +70,7 @@
             <View
                 android:layout_width="10dp"
                 android:layout_height="2dp"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="3dp"
                 android:visibility="gone"
                 android:background="@color/colorPrimary"/>
         </LinearLayout>
@@ -80,14 +79,13 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_star_empty"
-        android:layout_marginRight="13dp"
+        android:src="@drawable/ic_ag_share"
+        android:layout_marginRight="10dp"
         android:layout_gravity="end"/>
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_star_empty"
-        android:layout_marginRight="10dp"
+        android:src="@drawable/ic_ag_fav"
         android:layout_gravity="end"/>
 </android.support.v7.widget.Toolbar>
 

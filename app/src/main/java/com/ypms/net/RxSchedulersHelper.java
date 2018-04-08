@@ -37,7 +37,7 @@ public class RxSchedulersHelper<T> {
                 return upstream
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
-                        .compose(rxFragment.<T>bindUntilEvent(FragmentEvent.DESTROY));
+                        .compose(rxFragment.<T>bindUntilEvent(FragmentEvent.STOP));
             }
 
         };
