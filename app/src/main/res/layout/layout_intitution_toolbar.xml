@@ -22,34 +22,40 @@
         android:orientation="horizontal"
         android:layout_gravity="center">
         <LinearLayout
+            android:id="@+id/ll_tab_ins"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/tv_tab_ins"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:textColor="@color/colorPrimary"
                 android:text="机构"/>
             <View
+                android:id="@+id/view_tab_ins"
                 android:layout_width="10dp"
                 android:layout_height="2dp"
                 android:layout_marginTop="3dp"
                 android:background="@color/colorPrimary"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/ll_tab_class"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_marginLeft="22dp"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/tv_tab_class"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:text="课程"/>
             <View
+                android:id="@+id/view_tab_class"
                 android:layout_width="10dp"
                 android:layout_height="2dp"
                 android:layout_marginTop="3dp"
@@ -57,17 +63,20 @@
                 android:background="@color/colorPrimary"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/ll_tab_review"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_marginLeft="22dp"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/tv_tab_review"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:text="点评"/>
             <View
+                android:id="@+id/view_tab_review"
                 android:layout_width="10dp"
                 android:layout_height="2dp"
                 android:layout_marginTop="3dp"

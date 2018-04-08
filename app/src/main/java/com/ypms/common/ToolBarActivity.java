@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
@@ -74,6 +75,12 @@ public abstract class ToolBarActivity extends AppCompatActivity implements Lifec
         } else {
             permissionCall.success(list);
         }
+    }
+
+    public int getNotificationHigh() {
+        Rect outRect = new Rect();
+        getWindow().getDecorView().getWindowVisibleDisplayFrame(outRect);
+        return outRect.top;
     }
 
 

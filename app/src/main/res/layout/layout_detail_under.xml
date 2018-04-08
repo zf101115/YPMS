@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
@@ -20,5 +20,71 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_ag_more"/>
     </LinearLayout>
-
-</LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_teacher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:scrollbars="none"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="9dp"
+        android:background="@color/colorGrey_E6"/>
+    <LinearLayout
+        android:id="@+id/ll_review"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="15dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:text="家长点评(255)"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="均4.8分"
+            android:drawableRight="@drawable/ic_ag_more"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_active"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:padding="8dp"
+        android:orientation="vertical">
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="9dp"
+        android:background="@color/colorGrey_E6"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="15dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:text="私人定制"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_ag_more"/>
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="15dp"
+        android:scrollbars="none"/>
+</merge>
