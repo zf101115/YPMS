@@ -34,6 +34,9 @@ import butterknife.OnClick;
 
 public class InstitutionDetailActivity extends ToolBarActivity {
 
+    private int[] tabReview;
+    private int[] tabClass;
+
     @BindView(R.id.tv_tab_ins)
     TextView tvTabIns;
     @BindView(R.id.view_tab_ins)
@@ -62,9 +65,6 @@ public class InstitutionDetailActivity extends ToolBarActivity {
     LinearLayout llBulk;
     @BindView(R.id.ll_other)
     LinearLayout llOther;
-    private int[] tabReview;
-    private int[] tabClass;
-
     @BindView(R.id.img_back)
     ImageView imgBack;
     @BindView(R.id.toolbar)
