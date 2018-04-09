@@ -10,9 +10,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <com.ypms.customWidget.RoundRectImageView
+            android:id="@+id/iv_active_pic"
             android:layout_width="75dp"
-            android:layout_height="55dp"
-            android:background="@color/colorPrimary"/>
+            android:layout_height="55dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,12 +28,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:layout_marginLeft="10dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
+            android:textColor="@color/title_dark"
             android:ellipsize="end"
             android:text="显示免费领取价值3000元口语体验教程"/>
         <TextView

@@ -52,9 +52,9 @@
             android:drawableRight="@drawable/ic_ag_more"/>
     </LinearLayout>
     <LinearLayout
-        android:id="@+id/ll_active"
+        android:id="@+id/ll_review_content"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:padding="8dp"
         android:orientation="vertical">
     </LinearLayout>

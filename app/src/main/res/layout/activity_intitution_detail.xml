@@ -194,9 +194,9 @@
                 android:textColor="@color/black"
                 android:text="活动预约"/>
             <LinearLayout
-                android:id="@+id/ll_active"
+                android:id="@+id/ll_active_content"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:padding="8dp"
                 android:orientation="vertical">
             </LinearLayout>
@@ -238,7 +238,7 @@
             <LinearLayout
                 android:id="@+id/ll_bulk"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
             </LinearLayout>
 
@@ -263,7 +263,7 @@
             <LinearLayout
                 android:id="@+id/ll_other"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
             </LinearLayout>
             <View

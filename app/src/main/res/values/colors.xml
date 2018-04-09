@@ -13,4 +13,5 @@
     <color name="red">#ffff0000</color>
     <color name="bg_default">#f8f8f8</color>
     <color name="black">#000000</color>
+    <color name="title_dark">#333333</color>
 </resources>

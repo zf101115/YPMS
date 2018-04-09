@@ -7,8 +7,7 @@
     <com.ypms.customWidget.RoundRectImageView
         android:id="@+id/iv_bulk"
         android:layout_width="75dp"
-        android:layout_height="55dp"
-        android:background="@color/colorPrimary"/>
+        android:layout_height="55dp"/>
     <LinearLayout
         android:layout_toRightOf="@+id/iv_bulk"
         android:id="@+id/ll_bulk_info"
@@ -22,6 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
+            android:textColor="@color/title_dark"
             android:ellipsize="end"
             android:text="显示免费领取价值3000元口语体验教程"/>
         <TextView
@@ -29,14 +29,14 @@
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:textSize="12sp"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="4dp"
             android:ellipsize="end"
             android:text="协调训练 社交训练 专注力"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="6dp"
             android:ellipsize="end"
             android:textSize="12sp"
             android:text="2～5岁儿童 . 无基础 . 1～4人小班 . 外籍教师"/>
@@ -50,12 +50,14 @@
                 android:layout_height="wrap_content"
                 android:text="随时退"
                 android:padding="2dp"
+                android:textSize="12sp"
                 android:textColor="@color/colorPrimary"
                 android:background="@drawable/bg_green_white_radius"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="过期退"
+                android:textSize="12sp"
                 android:padding="2dp"
                 android:textColor="@color/colorPrimary"
                 android:layout_marginLeft="5dp"
@@ -84,7 +86,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="原价¥1800"/>
+                android:textSize="12sp"
+                android:text="原价"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¥1800"/>
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/ll_bulk_pay"
@@ -93,11 +100,13 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
                 <TextView
+                    android:id="@+id/tv_class_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
                     android:text="已售40"/>
                 <TextView
+                    android:id="@+id/tv_class_pay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="马上抢"

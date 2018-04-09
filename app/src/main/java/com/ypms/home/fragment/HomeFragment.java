@@ -405,25 +405,31 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
         Picasso.with(mContext).load("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522734328&di=5067351a86cf85b3337c7641ad55279a&imgtype=jpg&er=1&src=http%3A%2F%2Fsem.g3img.com%2Fg3img%2Fweiwuguoji%2F20140711161058_41758.jpg").into(ivBottomLeft);
         Picasso.with(mContext).load("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522734328&di=5067351a86cf85b3337c7641ad55279a&imgtype=jpg&er=1&src=http%3A%2F%2Fsem.g3img.com%2Fg3img%2Fweiwuguoji%2F20140711161058_41758.jpg").into(ivBottomRight);
 
-        HomeController homeController = new HomeController();
-        homeController.getHomeData(this, new HomeController.HomeDataListener() {
-            @Override
-            public void onComplete(Mechanism mechanismPage) {
-                for (int i=0;i<=10;i++){
-                    Mechanism mechanism = new Mechanism(i+"古墩路因么培训机构");
-                    list.add(mechanism);
-                }
-                homeAdapter.setItems(list);
-                homeAdapter.notifyDataSetChanged();
-            }
+//        HomeController homeController = new HomeController();
+//        homeController.getHomeData(this, new HomeController.HomeDataListener() {
+//            @Override
+//            public void onComplete(Mechanism mechanismPage) {
+//                for (int i=0;i<=10;i++){
+//                    Mechanism mechanism = new Mechanism(i+"古墩路因么培训机构");
+//                    list.add(mechanism);
+//                }
+//                homeAdapter.setItems(list);
+//                homeAdapter.notifyDataSetChanged();
+//            }
+//
+//            @Override
+//            public void onFailed(RestBase resetBody) {
+//                Toast.makeText(mContext,resetBody.getDetail(),Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
 
-            @Override
-            public void onFailed(RestBase resetBody) {
-                Toast.makeText(mContext,resetBody.getDetail(),Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
+        for (int i=0;i<=10;i++){
+            Mechanism mechanism = new Mechanism(i+"古墩路因么培训机构");
+            list.add(mechanism);
+        }
+        homeAdapter.setItems(list);
+        homeAdapter.notifyDataSetChanged();
     }
 
     @Override

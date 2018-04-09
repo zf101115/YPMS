@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -16,7 +17,11 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.ypms.R;
+import com.ypms.common.ContextUtils;
 import com.ypms.common.ToolBarActivity;
+import com.ypms.customWidget.CircleImageView;
+import com.ypms.customWidget.RoundRectImageView;
+import com.ypms.customWidget.StartView;
 import com.ypms.home.adapter.HomeRankingAdapter;
 import com.ypms.home.model.Mechanism;
 import com.ypms.institution.adapter.TeacherAdapter;
@@ -59,7 +64,7 @@ public class InstitutionDetailActivity extends ToolBarActivity {
     TextView tvMarkLeft;
     @BindView(R.id.iv_location)
     ImageView ivLocation;
-    @BindView(R.id.ll_active)
+    @BindView(R.id.ll_active_content)
     LinearLayout llActive;
     @BindView(R.id.ll_bulk)
     LinearLayout llBulk;
@@ -81,6 +86,10 @@ public class InstitutionDetailActivity extends ToolBarActivity {
     LinearLayout llClass;
     @BindView(R.id.ll_review)
     LinearLayout llReview;
+    @BindView(R.id.ll_review_content)
+    LinearLayout llReviewContent;
+
+    List<Mechanism> list;
 
     public static void startActivity(Context mContext) {
         Intent intent = new Intent(mContext, InstitutionDetailActivity.class);
@@ -106,7 +115,7 @@ public class InstitutionDetailActivity extends ToolBarActivity {
         rvAd.setLayoutManager(horizontalManager);
         TeacherAdapter teacherAdapter = new TeacherAdapter(mContext);
         HomeRankingAdapter homeRankingAdapter = new HomeRankingAdapter(mContext);
-        List<Mechanism> list = new ArrayList<>();
+        list = new ArrayList<>();
         Mechanism mechanism = new Mechanism("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522734328&di=5067351a86cf85b3337c7641ad55279a&imgtype=jpg&er=1&src=http%3A%2F%2Fsem.g3img.com%2Fg3img%2Fweiwuguoji%2F20140711161058_41758.jpg");
         Mechanism mechanism1 = new Mechanism("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg");
         Mechanism mechanism2 = new Mechanism("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522734328&di=5067351a86cf85b3337c7641ad55279a&imgtype=jpg&er=1&src=http%3A%2F%2Fsem.g3img.com%2Fg3img%2Fweiwuguoji%2F20140711161058_41758.jpg");
@@ -121,6 +130,80 @@ public class InstitutionDetailActivity extends ToolBarActivity {
         homeRankingAdapter.setItems(list);
         rvTeacher.setAdapter(teacherAdapter);
         rvAd.setAdapter(homeRankingAdapter);
+        initData();
+        initEvent();
+    }
+
+    private void initData() {
+
+        for (int index=0; index<2;index++){
+            View itemView = LayoutInflater.from(mContext).inflate(R.layout.item_active_layout,null);
+            RoundRectImageView ivActive = itemView.findViewById(R.id.iv_active_pic);
+            Picasso.with(mContext).load(list.get(index).getTitle()).into(ivActive);
+            itemView.setTag(index);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+//                    clickView((Integer) v.getTag());
+                }
+            });
+//            scrollViews.add(itemView);
+            llActive.addView(itemView);
+        }
+        for (int index=0; index<2;index++){
+            View itemView = LayoutInflater.from(mContext).inflate(R.layout.item_bulk_layout,null);
+            RoundRectImageView ivBulk = itemView.findViewById(R.id.iv_bulk);
+            Picasso.with(mContext).load(list.get(index).getTitle()).into(ivBulk);
+            itemView.setTag(index);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+//                    clickView((Integer) v.getTag());
+                }
+            });
+//            scrollViews.add(itemView);
+            llBulk.addView(itemView);
+        }
+
+        for (int index=0; index<2;index++){
+            View itemView = LayoutInflater.from(mContext).inflate(R.layout.item_bulk_layout,null);
+            RoundRectImageView ivBulk = itemView.findViewById(R.id.iv_bulk);
+            TextView tvPay = itemView.findViewById(R.id.tv_class_pay);
+            TextView tvClassNum = itemView.findViewById(R.id.tv_class_num);
+            tvClassNum.setVisibility(View.GONE);
+            tvPay.setText("立即抢购");
+            Picasso.with(mContext).load(list.get(index).getTitle()).into(ivBulk);
+            itemView.setTag(index);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+//                    clickView((Integer) v.getTag());
+                }
+            });
+//            scrollViews.add(itemView);
+            llOther.addView(itemView);
+        }
+
+        for (int index=0; index<5;index++){
+            View itemView = LayoutInflater.from(mContext).inflate(R.layout.item_detail_review_layout,null);
+            CircleImageView ivAvatar = itemView.findViewById(R.id.iv_review_pic);
+            StartView startView = itemView.findViewById(R.id.start);
+            startView.setStarMark(3.6f);
+            Picasso.with(mContext).load(list.get(index).getTitle()).into(ivAvatar);
+            itemView.setTag(index);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+//                    clickView((Integer) v.getTag());
+                }
+            });
+//            scrollViews.add(itemView);
+            llReviewContent.addView(itemView);
+        }
+    }
+
+    private void initEvent() {
+
     }
 
     @Override
