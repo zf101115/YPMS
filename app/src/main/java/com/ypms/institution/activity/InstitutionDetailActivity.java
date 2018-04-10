@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -42,8 +43,9 @@ import butterknife.OnClick;
 
 public class InstitutionDetailActivity extends ToolBarActivity {
 
-    private int[] tabReview;
-    private int[] tabClass;
+    private int[] tabReview = new int[2];
+    private int[] tabClass= new int[2];
+    private boolean isActiveOpen;
 
     @BindView(R.id.tv_tab_ins)
     TextView tvTabIns;
@@ -155,8 +157,6 @@ public class InstitutionDetailActivity extends ToolBarActivity {
         llClass.post(new Runnable() {
             @Override
             public void run() {
-                tabReview = new int[2];
-                tabClass = new int[2];
                 llClass.getLocationOnScreen(tabClass);
                 llReview.getLocationOnScreen(tabReview);
             }
@@ -211,12 +211,19 @@ public class InstitutionDetailActivity extends ToolBarActivity {
             TextView tvClassNum = itemView.findViewById(R.id.tv_class_num);
             tvClassNum.setVisibility(View.GONE);
             tvPay.setText("立即抢购");
+            tvPay.setTag(index);
             Picasso.with(mContext).load(list.get(index).getTitle()).into(ivBulk);
             itemView.setTag(index);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 //                    clickView((Integer) v.getTag());
+                }
+            });
+            tvPay.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    OrderSubmitActivity.startActivity(mContext);
                 }
             });
 //            scrollViews.add(itemView);
@@ -248,7 +255,8 @@ public class InstitutionDetailActivity extends ToolBarActivity {
     @OnClick(R.id.ll_tab_class)
     public void tabClassClick() {
         setTabStatus(tvTabClass,viewTabClass);
-        scrollToPosition(tabClass[1] - toolbar.getMeasuredHeight() - getNotificationHigh());
+        scrollToPosition(isActiveOpen?tabClass[1] - toolbar.getMeasuredHeight() - getNotificationHigh()
+                +(llActive.getMeasuredHeight()/5)*3:tabClass[1] - toolbar.getMeasuredHeight() - getNotificationHigh());
     }
 
     @OnClick(R.id.ll_tab_ins)
@@ -260,12 +268,36 @@ public class InstitutionDetailActivity extends ToolBarActivity {
     @OnClick(R.id.ll_tab_review)
     public void tabReviewClick() {
         setTabStatus(tvTabReview,viewTabReview);
-        scrollToPosition(tabReview[1] - toolbar.getMeasuredHeight() - getNotificationHigh());
+        scrollToPosition(isActiveOpen?tabReview[1] - toolbar.getMeasuredHeight() - getNotificationHigh()
+                +(llActive.getMeasuredHeight()/5)*3:tabReview[1] - toolbar.getMeasuredHeight() - getNotificationHigh());
     }
     @OnClick(R.id.ll_other_more)
     public void otherMoreClick(){
         Intent intent = new Intent(mContext,InstitutionActivity.class);
         startActivity(intent);
+    }
+    @OnClick(R.id.ll_stretch)
+    public void stretchClick(){
+        if (llActive.getChildCount()>2){
+            llActive.removeViews(2,3);
+            isActiveOpen = false;
+        }else {
+        for (int index=2; index<5;index++){
+            View itemView = LayoutInflater.from(mContext).inflate(R.layout.item_active_layout,null);
+            RoundRectImageView ivActive = itemView.findViewById(R.id.iv_active_pic);
+            Picasso.with(mContext).load(list.get(index).getTitle()).into(ivActive);
+            itemView.setTag(index);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AppointmentDialog appointmentDialog = new AppointmentDialog(mContext);
+                    appointmentDialog.show();
+                }
+            });
+            llActive.addView(itemView);
+        }
+        isActiveOpen = true;
+        }
     }
 
     public void scrollToPosition(int y) {
