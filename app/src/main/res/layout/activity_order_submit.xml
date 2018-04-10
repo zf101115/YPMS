@@ -49,6 +49,7 @@
         android:paddingRight="15dp"
         android:paddingBottom="15dp">
         <TextView
+            android:id="@+id/tv_price"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -56,6 +57,7 @@
             android:textSize="16sp"
             android:text="¥1600"/>
         <com.ypms.customWidget.CountView
+            android:id="@+id/countview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>

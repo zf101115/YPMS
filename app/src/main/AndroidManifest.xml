@@ -37,6 +37,7 @@
         </activity>
         <activity android:name=".institution.activity.InstitutionDetailActivity"/>
         <activity android:name=".institution.activity.InstitutionActivity"/>
+        <activity android:name=".order.activity.OrderSubmitActivity"/>
     </application>
 
 </manifest>

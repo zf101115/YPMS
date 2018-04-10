@@ -222,10 +222,6 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
             @Override
             public void OnItemClick(View view, int position) {
                 Toast.makeText(mContext,position+"",Toast.LENGTH_LONG).show();
-                if (position>8){
-                    rv.smoothScrollToPosition(2);
-                }
-
             }
 
             @Override

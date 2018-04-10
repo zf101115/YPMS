@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 import com.ypms.R;
@@ -26,6 +27,7 @@ import com.ypms.customWidget.StartView;
 import com.ypms.home.adapter.HomeRankingAdapter;
 import com.ypms.home.model.Mechanism;
 import com.ypms.institution.adapter.TeacherAdapter;
+import com.ypms.order.activity.OrderSubmitActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -182,14 +184,22 @@ public class InstitutionDetailActivity extends ToolBarActivity {
         for (int index=0; index<2;index++){
             View itemView = LayoutInflater.from(mContext).inflate(R.layout.item_bulk_layout,null);
             RoundRectImageView ivBulk = itemView.findViewById(R.id.iv_bulk);
+            TextView tvClassPay = itemView.findViewById(R.id.tv_class_pay);
             Picasso.with(mContext).load(list.get(index).getTitle()).into(ivBulk);
             itemView.setTag(index);
-            itemView.setOnClickListener(new View.OnClickListener() {
+            tvClassPay.setTag(index);
+            tvClassPay.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    clickView((Integer) v.getTag());
+                    OrderSubmitActivity.startActivity(mContext);
                 }
             });
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+////                    clickView((Integer) v.getTag());
+//                }
+//            });
 //            scrollViews.add(itemView);
             llBulk.addView(itemView);
         }

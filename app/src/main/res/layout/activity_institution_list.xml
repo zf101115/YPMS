@@ -4,6 +4,11 @@
     android:layout_height="match_parent">
     <include layout="@layout/layout_toolbar"/>
     <include layout="@layout/layout_sort_grey"/>
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGrey_E6"/>
     <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
