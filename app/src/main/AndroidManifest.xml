@@ -36,6 +36,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".institution.activity.InstitutionDetailActivity"/>
+        <activity android:name=".institution.activity.InstitutionActivity"/>
     </application>
 
 </manifest>

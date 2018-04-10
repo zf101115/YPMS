@@ -17,6 +17,7 @@ import com.ypms.home.fragment.HomeFragment;
 import com.ypms.home.fragment.MeFragment;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends ToolBarActivity {
@@ -50,8 +51,14 @@ public class MainActivity extends ToolBarActivity {
     }
 
     @Override
+    protected String setTittle() {
+        return null;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ButterKnife.bind(this);
         initWidget();
     }
 

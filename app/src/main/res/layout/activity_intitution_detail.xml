@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <include layout="@layout/layout_intitution_toolbar"/>
+    <include layout="@layout/layout_toolbar"/>
 
     <ScrollView
         android:id="@+id/scroll"
@@ -243,6 +243,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_other_more"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"

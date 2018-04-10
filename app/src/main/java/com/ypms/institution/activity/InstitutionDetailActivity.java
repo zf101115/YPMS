@@ -88,6 +88,12 @@ public class InstitutionDetailActivity extends ToolBarActivity {
     LinearLayout llReview;
     @BindView(R.id.ll_review_content)
     LinearLayout llReviewContent;
+    @BindView(R.id.ll_tab)
+    LinearLayout llTab;
+    @BindView(R.id.iv_menu_left)
+    ImageView ivMenuLeft;
+    @BindView(R.id.iv_menu_right)
+    ImageView ivMenuRight;
 
     List<Mechanism> list;
 
@@ -99,6 +105,11 @@ public class InstitutionDetailActivity extends ToolBarActivity {
     @Override
     protected int getLayoutResource() {
         return R.layout.activity_intitution_detail;
+    }
+
+    @Override
+    protected String setTittle() {
+        return "";
     }
 
     @Override
@@ -130,8 +141,23 @@ public class InstitutionDetailActivity extends ToolBarActivity {
         homeRankingAdapter.setItems(list);
         rvTeacher.setAdapter(teacherAdapter);
         rvAd.setAdapter(homeRankingAdapter);
+        llTab.setVisibility(View.VISIBLE);
+        ivMenuLeft.setVisibility(View.VISIBLE);
+        ivMenuRight.setVisibility(View.VISIBLE);
         initData();
         initEvent();
+        /**
+         * post一个任务到队尾，来获取控件坐标，防止获取高度为0
+         */
+        llClass.post(new Runnable() {
+            @Override
+            public void run() {
+                tabReview = new int[2];
+                tabClass = new int[2];
+                llClass.getLocationOnScreen(tabClass);
+                llReview.getLocationOnScreen(tabReview);
+            }
+        });
     }
 
     private void initData() {
@@ -206,23 +232,6 @@ public class InstitutionDetailActivity extends ToolBarActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        /**
-         * post一个任务到队尾，来获取控件坐标，防止获取高度为0
-         */
-        llClass.post(new Runnable() {
-            @Override
-            public void run() {
-                tabReview = new int[2];
-                tabClass = new int[2];
-                llClass.getLocationOnScreen(tabClass);
-                llReview.getLocationOnScreen(tabReview);
-            }
-        });
-    }
-
     @OnClick(R.id.ll_tab_class)
     public void tabClassClick() {
         setTabStatus(tvTabClass,viewTabClass);
@@ -239,6 +248,11 @@ public class InstitutionDetailActivity extends ToolBarActivity {
     public void tabReviewClick() {
         setTabStatus(tvTabReview,viewTabReview);
         scrollToPosition(tabReview[1] - toolbar.getMeasuredHeight() - getNotificationHigh());
+    }
+    @OnClick(R.id.ll_other_more)
+    public void otherMoreClick(){
+        Intent intent = new Intent(mContext,InstitutionActivity.class);
+        startActivity(intent);
     }
 
     public void scrollToPosition(int y) {

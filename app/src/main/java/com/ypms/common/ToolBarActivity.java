@@ -12,7 +12,10 @@ import android.support.annotation.CallSuper;
 import android.support.annotation.CheckResult;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.trello.rxlifecycle2.LifecycleProvider;
 import com.trello.rxlifecycle2.LifecycleTransformer;
@@ -26,7 +29,6 @@ import com.ypms.net.RestBase;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.ButterKnife;
 import io.reactivex.Observable;
 import io.reactivex.subjects.BehaviorSubject;
 import kr.co.namee.permissiongen.PermissionGen;
@@ -38,6 +40,7 @@ import kr.co.namee.permissiongen.PermissionGen;
 public abstract class ToolBarActivity extends AppCompatActivity implements LifecycleProvider<ActivityEvent> {
 
     protected Context mContext;
+    protected abstract String setTittle();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +49,29 @@ public abstract class ToolBarActivity extends AppCompatActivity implements Lifec
         mContext = this;
         setContentView(getLayoutResource());
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        ButterKnife.bind(this);
+        initToolBar();
+    }
+
+    /**
+     * setTitle==null:无返回箭头，无标题
+     * "".equal(setTitle):有返回箭头，无标题
+     * setTitle==null&&"".equal(setTitle)两者都有
+     */
+    private void initToolBar(){
+        if(null != setTittle()){
+            if (!"".equals(setTittle())){
+                TextView tvTittle = findViewById(R.id.tv_title);
+                tvTittle.setText(setTittle());
+            }
+            ImageView imgBack = findViewById(R.id.img_back);
+            imgBack.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    finish();
+                }
+            });
+
+        }
     }
 
     protected abstract int getLayoutResource();

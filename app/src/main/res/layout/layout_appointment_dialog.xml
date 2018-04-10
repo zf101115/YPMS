@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:gravity="bottom"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@drawable/bg_red_radius"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:text="免费"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:text="显示免费领取价值300元口语体验课！"
+                android:textColor="@color/title_dark" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_ag_phone" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:drawableLeft="@drawable/shape_round_red"
+            android:drawablePadding="5dp"
+            android:text="免费想象力测试"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/shape_round_red"
+            android:drawablePadding="5dp"
+            android:text="免费定制丰富方案"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/shape_round_red"
+            android:drawablePadding="5dp"
+            android:text="经验即碍事一对一指导"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="使用时间：2018.2.10-2019.2.19" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="适用商户：韦博国际英语（文二路中心店）" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_et_stroke"
+            android:hint="请输入预定者姓名"
+            android:paddingLeft="10dp"
+            android:maxLength="10"
+            android:textColorHint="@color/colorGrey_E5"
+            android:textColor="@color/title_dark"
+            android:textSize="12sp" />
+        <EditText
+            android:id="@+id/et_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_et_stroke"
+            android:hint="请输入手机"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/colorGrey_E5"
+            android:textColor="@color/title_dark"
+            android:textSize="12sp" />
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="10dp"
+             android:layout_marginBottom="10dp"
+             android:text="提交信息30分钟内会有专人电话确认"
+             android:drawableLeft="@drawable/ic_ag_commnet_like"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorAccent"
+        android:text="立即预约"
+        android:gravity="center"
+        android:textColor="@color/white"/>
+</LinearLayout>
