@@ -19,6 +19,7 @@ import com.squareup.picasso.Picasso;
 import com.ypms.R;
 import com.ypms.common.ContextUtils;
 import com.ypms.common.ToolBarActivity;
+import com.ypms.customWidget.AppointmentDialog;
 import com.ypms.customWidget.CircleImageView;
 import com.ypms.customWidget.RoundRectImageView;
 import com.ypms.customWidget.StartView;
@@ -171,6 +172,8 @@ public class InstitutionDetailActivity extends ToolBarActivity {
                 @Override
                 public void onClick(View v) {
 //                    clickView((Integer) v.getTag());
+                    AppointmentDialog appointmentDialog = new AppointmentDialog(mContext);
+                    appointmentDialog.show();
                 }
             });
 //            scrollViews.add(itemView);

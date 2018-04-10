@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/layout_toolbar"/>
+    <View style="@style/div_vertical_line"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="欢动课 涮与互动 外交+助教"
+        android:textColor="@color/title_dark"
+        android:background="@color/white"
+        android:padding="15dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="着力提升 儿童 协调训练社交训练专注力"
+        android:textSize="12sp"
+        android:background="@color/white"
+        android:paddingLeft="15dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="15dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="随时退"
+            android:padding="2dp"
+            android:textSize="12sp"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/bg_green_white_radius"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="过期退"
+            android:textSize="12sp"
+            android:padding="2dp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/bg_green_white_radius"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:text="¥1600"/>
+        <com.ypms.customWidget.CountView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/colorGrey_E6"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="注意事项"
+        android:padding="15dp"
+        android:textColor="@color/title_dark"
+        android:background="@color/white"
+        android:textSize="16sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="15dp"
+        android:text="本课程需要以为家长参与预定之后有专人和报名人员联系"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/colorGrey_E6"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="15dp">
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_et_stroke"
+            android:hint="请输入预定者姓名"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/color_grey_99"
+            android:textColor="@color/title_dark"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/et_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_et_stroke"
+            android:hint="请输入手机号"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/color_grey_99"
+            android:textColor="@color/title_dark"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="提交信息30分钟内会有专人电话确认"
+            android:drawableLeft="@drawable/ic_ag_commnet_like"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_red_radius"
+            android:text="提交订单"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:paddingTop="12dp"
+            android:layout_marginTop="8dp"
+            android:paddingBottom="12dp"/>
+    </LinearLayout>
+
+</LinearLayout>
