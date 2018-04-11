@@ -188,7 +188,6 @@ public class InstitutionDetailActivity extends ToolBarActivity {
                     appointmentDialog.show();
                 }
             });
-//            scrollViews.add(itemView);
             llActive.addView(itemView);
         }
         for (int index=0; index<2;index++){
@@ -210,7 +209,6 @@ public class InstitutionDetailActivity extends ToolBarActivity {
 ////                    clickView((Integer) v.getTag());
 //                }
 //            });
-//            scrollViews.add(itemView);
             llBulk.addView(itemView);
         }
 
@@ -236,7 +234,6 @@ public class InstitutionDetailActivity extends ToolBarActivity {
                     OrderSubmitActivity.startActivity(mContext);
                 }
             });
-//            scrollViews.add(itemView);
             llOther.addView(itemView);
         }
 
@@ -253,7 +250,6 @@ public class InstitutionDetailActivity extends ToolBarActivity {
 //                    clickView((Integer) v.getTag());
                 }
             });
-//            scrollViews.add(itemView);
             llReviewContent.addView(itemView);
         }
     }
@@ -267,11 +263,11 @@ public class InstitutionDetailActivity extends ToolBarActivity {
                 else
                     defautHeight = toolHeight;
                 if (t>tabReview[1]-defautHeight-10||ContextUtils.isViewInScreen(rvAd)){
-                    setTabStatus(tvTabReview,viewTabReview);
+                    setTabStatus(2);
                 }else if (t>=(tabClass[1]-defautHeight)&&t<(tabReview[1]-defautHeight)&&!ContextUtils.isViewInScreen(rvAd)){
-                    setTabStatus(tvTabClass,viewTabClass);
+                    setTabStatus(1);
                 }else if (t<tabClass[1]-defautHeight&&!ContextUtils.isViewInScreen(rvAd)){
-                    setTabStatus(tvTabIns,viewTabIns);
+                    setTabStatus(0);
                 }
             }
         });
@@ -302,7 +298,6 @@ public class InstitutionDetailActivity extends ToolBarActivity {
         if (llActive.getChildCount()>2){
             llActive.removeViews(2,3);
             isActiveOpen = false;
-//            toolHeight=toolHeight+((llActive.getMeasuredHeight()/5)*3);
         }else {
         for (int index=2; index<5;index++){
             View itemView = LayoutInflater.from(mContext).inflate(R.layout.item_active_layout,null);
@@ -319,7 +314,6 @@ public class InstitutionDetailActivity extends ToolBarActivity {
             llActive.addView(itemView);
         }
         isActiveOpen = true;
-//            toolHeight=toolHeight-((llActive.getMeasuredHeight()/5)*3);
         }
     }
 
@@ -331,14 +325,33 @@ public class InstitutionDetailActivity extends ToolBarActivity {
         animators.start();
     }
 
-    private void setTabStatus(TextView tv,View view){
-        tvTabClass.setTextColor(mContext.getResources().getColor(R.color.text_search_grey));
-        tvTabIns.setTextColor(mContext.getResources().getColor(R.color.text_search_grey));
-        tvTabReview.setTextColor(mContext.getResources().getColor(R.color.text_search_grey));
-        tv.setTextColor(mContext.getResources().getColor(R.color.colorPrimary));
-        viewTabClass.setVisibility(View.GONE);
-        viewTabIns.setVisibility(View.GONE);
-        viewTabReview.setVisibility(View.GONE);
-        view.setVisibility(View.VISIBLE);
+    private void setTabStatus(int index){
+        switch (index){
+            case 0:
+                tvTabClass.setTextColor(mContext.getResources().getColor(R.color.text_search_grey));
+                tvTabIns.setTextColor(mContext.getResources().getColor(R.color.colorPrimary));
+                tvTabReview.setTextColor(mContext.getResources().getColor(R.color.text_search_grey));
+                viewTabClass.setVisibility(View.GONE);
+                viewTabIns.setVisibility(View.VISIBLE);
+                viewTabReview.setVisibility(View.GONE);
+                break;
+            case 1:
+                tvTabClass.setTextColor(mContext.getResources().getColor(R.color.colorPrimary));
+                tvTabIns.setTextColor(mContext.getResources().getColor(R.color.text_search_grey));
+                tvTabReview.setTextColor(mContext.getResources().getColor(R.color.text_search_grey));
+                viewTabClass.setVisibility(View.VISIBLE);
+                viewTabIns.setVisibility(View.GONE);
+                viewTabReview.setVisibility(View.GONE);
+                break;
+            case 2:
+                tvTabClass.setTextColor(mContext.getResources().getColor(R.color.text_search_grey));
+                tvTabIns.setTextColor(mContext.getResources().getColor(R.color.text_search_grey));
+                tvTabReview.setTextColor(mContext.getResources().getColor(R.color.colorPrimary));
+                viewTabClass.setVisibility(View.GONE);
+                viewTabIns.setVisibility(View.GONE);
+                viewTabReview.setVisibility(View.VISIBLE);
+                break;
+            default:break;
+        }
     }
 }
