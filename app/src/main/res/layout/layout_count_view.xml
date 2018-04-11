@@ -10,13 +10,13 @@
         android:textSize="18sp"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
-        android:paddingTop="6dp"
-        android:paddingBottom="6dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
         android:background="@color/colorGrey_E6"
         android:text="—"/>
     <EditText
         android:id="@+id/et"
-        android:layout_width="62dp"
+        android:layout_width="42dp"
         android:gravity="center"
         android:background="@color/white"
         android:layout_height="match_parent"
@@ -30,8 +30,8 @@
         android:textSize="18sp"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
-        android:paddingTop="6dp"
-        android:paddingBottom="6dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
         android:background="@color/colorGrey_E6"
         android:text="+"/>
 

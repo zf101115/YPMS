@@ -23,6 +23,7 @@ import com.ypms.common.ContextUtils;
 import com.ypms.common.ToolBarActivity;
 import com.ypms.customWidget.AppointmentDialog;
 import com.ypms.customWidget.CircleImageView;
+import com.ypms.customWidget.ObservableScrollView;
 import com.ypms.customWidget.RoundRectImageView;
 import com.ypms.customWidget.StartView;
 import com.ypms.home.adapter.HomeRankingAdapter;
@@ -46,6 +47,8 @@ public class InstitutionDetailActivity extends ToolBarActivity {
     private int[] tabReview = new int[2];
     private int[] tabClass= new int[2];
     private boolean isActiveOpen;
+    private int toolHeight;
+    private int defautHeight;
 
     @BindView(R.id.tv_tab_ins)
     TextView tvTabIns;
@@ -86,7 +89,7 @@ public class InstitutionDetailActivity extends ToolBarActivity {
     @BindView(R.id.rv_ad)
     RecyclerView rvAd;
     @BindView(R.id.scroll)
-    ScrollView scroll;
+    ObservableScrollView scroll;
     @BindView(R.id.ll_class)
     LinearLayout llClass;
     @BindView(R.id.ll_review)
@@ -99,6 +102,8 @@ public class InstitutionDetailActivity extends ToolBarActivity {
     ImageView ivMenuLeft;
     @BindView(R.id.iv_menu_right)
     ImageView ivMenuRight;
+    @BindView(R.id.ll_honor)
+    LinearLayout llHonor;
 
     List<Mechanism> list;
 
@@ -159,11 +164,16 @@ public class InstitutionDetailActivity extends ToolBarActivity {
             public void run() {
                 llClass.getLocationOnScreen(tabClass);
                 llReview.getLocationOnScreen(tabReview);
+                toolHeight = toolbar.getMeasuredHeight() + getNotificationHigh();
             }
         });
     }
 
     private void initData() {
+        for (int index = 0;index<2;index++){
+            View itemView = LayoutInflater.from(mContext).inflate(R.layout.layout_single_text,null);
+            llHonor.addView(itemView);
+        }
 
         for (int index=0; index<2;index++){
             View itemView = LayoutInflater.from(mContext).inflate(R.layout.item_active_layout,null);
@@ -230,7 +240,7 @@ public class InstitutionDetailActivity extends ToolBarActivity {
             llOther.addView(itemView);
         }
 
-        for (int index=0; index<5;index++){
+        for (int index=0; index<5 ;index++){
             View itemView = LayoutInflater.from(mContext).inflate(R.layout.item_detail_review_layout,null);
             CircleImageView ivAvatar = itemView.findViewById(R.id.iv_review_pic);
             StartView startView = itemView.findViewById(R.id.start);
@@ -249,27 +259,38 @@ public class InstitutionDetailActivity extends ToolBarActivity {
     }
 
     private void initEvent() {
+        scroll.setScrollViewListener(new ObservableScrollView.ScrollViewListener() {
+            @Override
+            public void onScrollChanged(int l, int t) {
+                if (isActiveOpen)
+                    defautHeight = toolHeight-(llActive.getMeasuredHeight()/5)*3;
+                else
+                    defautHeight = toolHeight;
+                if (t>tabReview[1]-defautHeight-10||ContextUtils.isViewInScreen(rvAd)){
+                    setTabStatus(tvTabReview,viewTabReview);
+                }else if (t>=(tabClass[1]-defautHeight)&&t<(tabReview[1]-defautHeight)&&!ContextUtils.isViewInScreen(rvAd)){
+                    setTabStatus(tvTabClass,viewTabClass);
+                }else if (t<tabClass[1]-defautHeight&&!ContextUtils.isViewInScreen(rvAd)){
+                    setTabStatus(tvTabIns,viewTabIns);
+                }
+            }
+        });
 
     }
 
     @OnClick(R.id.ll_tab_class)
     public void tabClassClick() {
-        setTabStatus(tvTabClass,viewTabClass);
-        scrollToPosition(isActiveOpen?tabClass[1] - toolbar.getMeasuredHeight() - getNotificationHigh()
-                +(llActive.getMeasuredHeight()/5)*3:tabClass[1] - toolbar.getMeasuredHeight() - getNotificationHigh());
+        scrollToPosition(isActiveOpen?tabClass[1]-toolHeight+(llActive.getMeasuredHeight()/5)*3:tabClass[1] - toolHeight);
     }
 
     @OnClick(R.id.ll_tab_ins)
     public void tabInsClick() {
-        setTabStatus(tvTabIns,viewTabIns);
         scrollToPosition(0);
     }
 
     @OnClick(R.id.ll_tab_review)
     public void tabReviewClick() {
-        setTabStatus(tvTabReview,viewTabReview);
-        scrollToPosition(isActiveOpen?tabReview[1] - toolbar.getMeasuredHeight() - getNotificationHigh()
-                +(llActive.getMeasuredHeight()/5)*3:tabReview[1] - toolbar.getMeasuredHeight() - getNotificationHigh());
+        scrollToPosition(isActiveOpen?tabReview[1]-toolHeight+(llActive.getMeasuredHeight()/5)*3:tabReview[1] - toolHeight);
     }
     @OnClick(R.id.ll_other_more)
     public void otherMoreClick(){
@@ -281,6 +302,7 @@ public class InstitutionDetailActivity extends ToolBarActivity {
         if (llActive.getChildCount()>2){
             llActive.removeViews(2,3);
             isActiveOpen = false;
+//            toolHeight=toolHeight+((llActive.getMeasuredHeight()/5)*3);
         }else {
         for (int index=2; index<5;index++){
             View itemView = LayoutInflater.from(mContext).inflate(R.layout.item_active_layout,null);
@@ -297,6 +319,7 @@ public class InstitutionDetailActivity extends ToolBarActivity {
             llActive.addView(itemView);
         }
         isActiveOpen = true;
+//            toolHeight=toolHeight-((llActive.getMeasuredHeight()/5)*3);
         }
     }
 

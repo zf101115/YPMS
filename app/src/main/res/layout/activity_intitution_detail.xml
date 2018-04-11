@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
     <include layout="@layout/layout_toolbar"/>
 
-    <ScrollView
+    <com.ypms.customWidget.ObservableScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -157,6 +157,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="8dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="荣誉"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/red"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:background="@drawable/bg_red_white_radius"/>
+                <LinearLayout
+                    android:id="@+id/ll_honor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:orientation="vertical">
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
                 android:paddingBottom="10dp"
                 android:orientation="horizontal">
                 <TextView
@@ -273,6 +297,6 @@
                 android:background="@color/colorGrey_E6"/>
             <include layout="@layout/layout_detail_under"/>
         </LinearLayout>
-    </ScrollView>
+    </com.ypms.customWidget.ObservableScrollView>
 
 </LinearLayout>

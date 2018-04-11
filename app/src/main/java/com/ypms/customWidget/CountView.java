@@ -66,8 +66,10 @@ public class CountView extends LinearLayout implements TextWatcher,View.OnClickL
 
     @Override
     public void afterTextChanged(Editable s) {
-        if (s.toString().isEmpty())
+        if (s.toString().isEmpty()){
+            etAmount.setText("1");
             return;
+        }
         amount = Integer.valueOf(s.toString());
         if (amount > MaxCount) {
             etAmount.setText(MaxCount + "");
