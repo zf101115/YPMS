@@ -36,6 +36,7 @@ import com.ypms.home.activity.MainActivity;
 import com.ypms.home.adapter.HomeRankingAdapter;
 import com.ypms.home.adapter.HomeTeacherAdapter;
 import com.ypms.home.model.Mechanism;
+import com.ypms.institution.activity.InstitutionActivity;
 import com.ypms.institution.activity.InstitutionDetailActivity;
 import com.ypms.net.RestBase;
 
@@ -221,7 +222,7 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
         homeAdapter.setOnItemClickListener(new RecyclerItemClickListener() {
             @Override
             public void OnItemClick(View view, int position) {
-                Toast.makeText(mContext,position+"",Toast.LENGTH_LONG).show();
+                InstitutionDetailActivity.startActivity(mContext);
             }
 
             @Override
@@ -316,7 +317,7 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
         llParents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                InstitutionDetailActivity.startActivity(mContext);
+                InstitutionActivity.startActivity(mContext);
             }
         });
 

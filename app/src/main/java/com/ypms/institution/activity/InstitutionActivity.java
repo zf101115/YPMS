@@ -1,5 +1,7 @@
 package com.ypms.institution.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
@@ -10,6 +12,8 @@ import com.ypms.R;
 import com.ypms.area.model.Area;
 import com.ypms.common.ContextUtils;
 import com.ypms.common.ToolBarActivity;
+import com.ypms.common.recycleView.RecyclerItemClickListener;
+import com.ypms.course.activity.CourseBulkActivity;
 import com.ypms.customWidget.ScreenPopupWindow;
 import com.ypms.customWidget.SinglePopupWindow;
 import com.ypms.home.adapter.HomeAdapter;
@@ -49,6 +53,11 @@ public class InstitutionActivity extends ToolBarActivity implements ScreenPopupW
         return "机构";
     }
 
+    public static void startActivity(Context mContext) {
+        Intent intent = new Intent(mContext, InstitutionActivity.class);
+        mContext.startActivity(intent);
+    }
+
     @Override
     protected int getLayoutResource() {
         return R.layout.activity_institution_list;
@@ -61,7 +70,22 @@ public class InstitutionActivity extends ToolBarActivity implements ScreenPopupW
         rv.setPullRefreshEnabled(true);
 
         initData();
+        initEvent();
         initPopup();
+    }
+
+    private void initEvent() {
+        homeAdapter.setOnItemClickListener(new RecyclerItemClickListener() {
+            @Override
+            public void OnItemClick(View view, int position) {
+                InstitutionDetailActivity.startActivity(mContext);
+            }
+
+            @Override
+            public void OnItemLongClick(View view, int position) {
+
+            }
+        });
     }
 
     private void initPopup() {

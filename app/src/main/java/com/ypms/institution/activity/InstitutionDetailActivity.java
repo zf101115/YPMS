@@ -291,8 +291,7 @@ public class InstitutionDetailActivity extends ToolBarActivity {
     }
     @OnClick(R.id.ll_other_more)
     public void otherMoreClick(){
-        Intent intent = new Intent(mContext,InstitutionActivity.class);
-        startActivity(intent);
+
     }
     @OnClick(R.id.ll_class)
     public void llClassClick(){
