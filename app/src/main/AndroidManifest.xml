@@ -38,6 +38,7 @@
         <activity android:name=".institution.activity.InstitutionDetailActivity"/>
         <activity android:name=".institution.activity.InstitutionActivity"/>
         <activity android:name=".order.activity.OrderSubmitActivity"/>
+        <activity android:name=".course.activity.CourseBulkActivity"/>
     </application>
 
 </manifest>

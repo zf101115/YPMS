@@ -21,6 +21,7 @@ import com.squareup.picasso.Picasso;
 import com.ypms.R;
 import com.ypms.common.ContextUtils;
 import com.ypms.common.ToolBarActivity;
+import com.ypms.course.activity.CourseBulkActivity;
 import com.ypms.customWidget.AppointmentDialog;
 import com.ypms.customWidget.CircleImageView;
 import com.ypms.customWidget.ObservableScrollView;
@@ -292,6 +293,10 @@ public class InstitutionDetailActivity extends ToolBarActivity {
     public void otherMoreClick(){
         Intent intent = new Intent(mContext,InstitutionActivity.class);
         startActivity(intent);
+    }
+    @OnClick(R.id.ll_class)
+    public void llClassClick(){
+        CourseBulkActivity.startActivity(mContext);
     }
     @OnClick(R.id.ll_stretch)
     public void stretchClick(){
