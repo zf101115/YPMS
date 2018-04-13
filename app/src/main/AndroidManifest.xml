@@ -41,6 +41,7 @@
         <activity android:name=".course.activity.CourseBulkActivity"/>
         <activity android:name=".institution.activity.InstitutionActiveActivity"/>
         <activity android:name=".institution.activity.CommentDetailActivity"/>
+        <activity android:name=".institution.activity.TeacherActivity"/>
     </application>
 
 </manifest>

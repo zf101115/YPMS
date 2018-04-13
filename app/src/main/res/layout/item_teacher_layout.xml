@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/search_edit_white">
+    <com.ypms.customWidget.CircleImageView
+        android:id="@+id/avatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="MS.Che"
+        android:textColor="@color/title_dark"
+        android:layout_below="@+id/avatar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+    <TextView
+        android:id="@+id/spe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="儿童教育 亲子教育 家庭教育"
+        android:layout_below="@+id/nick"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_below="@+id/spe"
+        android:lineSpacingExtra="8dp"
+        android:text="MS.CHE,女，1989年19月出生明盟会晕啊
+        。汉语问下俄军驻阿努也本科，包机是圣诞节好呢撒的十点
+        半四大皆空呢撒的框架内岁的年纪水电开发技
+        能考试阶段附近空十点半撒肯德基半四大皆空呢撒的框架内岁的年纪水电开发技
+        能考试阶段附近空十点半撒肯德基半四大皆空呢撒的框架内岁的年纪水电开发技
+        能考试阶段附近空十点半撒肯德基"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_teacher_power_collect"
+        android:layout_marginRight="-5dp"
+        android:layout_marginTop="-5dp"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

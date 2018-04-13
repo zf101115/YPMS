@@ -294,6 +294,10 @@ public class InstitutionDetailActivity extends ToolBarActivity {
     public void otherMoreClick(){
 
     }
+    @OnClick(R.id.ll_teacher)
+    public void llTeacherClick(){
+        TeacherActivity.startActivity(mContext);
+    }
     @OnClick(R.id.ll_class)
     public void llClassClick(){
         CourseBulkActivity.startActivity(mContext);
