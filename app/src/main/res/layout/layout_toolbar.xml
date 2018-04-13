@@ -4,7 +4,6 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    app:elevation="0dp"
     xmlns:tools="http://schemas.android.com/tools">
 <android.support.v7.widget.Toolbar
     android:id="@+id/toolbar"
