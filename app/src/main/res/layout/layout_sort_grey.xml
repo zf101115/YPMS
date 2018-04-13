@@ -8,7 +8,8 @@
     <LinearLayout
         android:id="@+id/ll_sort"
         android:layout_width="match_parent"
-        android:layout_height="38dp">
+        android:layout_height="0dp"
+        android:layout_weight="1">
         <LinearLayout
             android:id="@+id/ll_near"
             android:layout_width="0dp"
@@ -45,8 +46,6 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_pb_pulldown"/>
         </LinearLayout>
-        <!--<View-->
-            <!--style="@style/div_horizontal_line"/>-->
         <LinearLayout
             android:id="@+id/ll_select"
             android:layout_width="0dp"
