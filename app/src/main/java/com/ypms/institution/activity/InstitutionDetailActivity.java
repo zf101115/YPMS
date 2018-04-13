@@ -8,17 +8,15 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 import com.ypms.R;
+import com.ypms.comment.activity.CommentDetailActivity;
 import com.ypms.common.ContextUtils;
 import com.ypms.common.ToolBarActivity;
 import com.ypms.course.activity.CourseBulkActivity;

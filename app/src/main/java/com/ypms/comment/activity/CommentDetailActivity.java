@@ -1,4 +1,4 @@
-package com.ypms.institution.activity;
+package com.ypms.comment.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,12 +12,12 @@ import android.widget.TextView;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.squareup.picasso.Picasso;
 import com.ypms.R;
+import com.ypms.comment.adapter.CommentAdapter;
 import com.ypms.common.ToolBarActivity;
 import com.ypms.course.adapter.ReviewPicAdapter;
 import com.ypms.customWidget.CircleImageView;
 import com.ypms.customWidget.NoScrollGridView;
 import com.ypms.home.model.Mechanism;
-import com.ypms.institution.adapter.CommentAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

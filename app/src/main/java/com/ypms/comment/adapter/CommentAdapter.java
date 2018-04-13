@@ -1,4 +1,4 @@
-package com.ypms.institution.adapter;
+package com.ypms.comment.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

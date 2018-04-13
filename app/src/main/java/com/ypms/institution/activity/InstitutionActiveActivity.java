@@ -15,7 +15,7 @@ import com.ypms.common.ToolBarActivity;
 import com.ypms.course.adapter.ReviewPicAdapter;
 import com.ypms.customWidget.NoScrollGridView;
 import com.ypms.home.model.Mechanism;
-import com.ypms.institution.adapter.CommentAdapter;
+import com.ypms.comment.adapter.CommentAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
