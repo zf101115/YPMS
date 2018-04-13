@@ -42,6 +42,7 @@
         <activity android:name=".institution.activity.InstitutionActiveActivity"/>
         <activity android:name=".comment.activity.CommentDetailActivity"/>
         <activity android:name=".institution.activity.TeacherActivity"/>
+        <activity android:name=".comment.activity.CommentAddActivity"/>
     </application>
 
 </manifest>

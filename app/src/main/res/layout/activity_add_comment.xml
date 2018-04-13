@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:start="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/layout_toolbar_elevation"/>
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="23dp"
+        android:background="@color/red"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="微博国际英语（文二西路点）"
+        android:textColor="@color/title_dark"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:paddingBottom="15dp"
+        android:layout_marginTop="18dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@color/white">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="对我们的机构还满意吗？"
+            android:layout_marginTop="24dp"/>
+        <com.ypms.customWidget.StartView
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            start:isClickable="true"
+            start:starEmpty="@drawable/ic_star_empty"
+            start:starFill="@drawable/ic_star_full"
+            start:starCount="5"
+            start:starDistance="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_centerVertical="true"
+            start:starSize="38dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            android:text="一般"
+            android:layout_marginTop="5dp"/>
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/search_edit_white"
+        android:hint="亲，机构环境怎样？教学水平怎样？"
+        android:gravity="left"
+        android:padding="8dp"
+        android:textColorHint="@color/color_grey_99"
+        android:layout_margin="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/colorPrimary"
+        android:text="提交评价"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"/>
+
+</LinearLayout>

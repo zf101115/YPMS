@@ -298,5 +298,4 @@
             <include layout="@layout/layout_detail_under"/>
         </LinearLayout>
     </com.ypms.customWidget.ObservableScrollView>
-
 </LinearLayout>
