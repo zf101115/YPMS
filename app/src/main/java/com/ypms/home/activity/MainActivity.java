@@ -16,6 +16,9 @@ import com.ypms.home.fragment.DiscoverFragment;
 import com.ypms.home.fragment.HomeFragment;
 import com.ypms.home.fragment.MeFragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -86,11 +89,15 @@ public class MainActivity extends ToolBarActivity {
         });
     }
 
-    private Fragment[] getFragments() {
+    private List<Fragment> getFragments() {
         HomeFragment homeFragment = new HomeFragment();
         DiscoverFragment discoverFragment = new DiscoverFragment();
         MeFragment meFragment = new MeFragment();
-        Fragment[] fragments = new Fragment[]{homeFragment, discoverFragment, meFragment};
+        List<Fragment> fragments = new ArrayList<>();
+        fragments.add(homeFragment);
+        fragments.add(discoverFragment);
+        fragments.add(meFragment);
+//        Fragment[] fragments = new Fragment[]{homeFragment, discoverFragment, meFragment};
         return fragments;
     }
 

@@ -249,6 +249,7 @@ public class InstitutionDetailActivity extends ToolBarActivity {
                 @Override
                 public void onClick(View v) {
 //                    clickView((Integer) v.getTag());
+                    CommentDetailActivity.startActivity(mContext);
                 }
             });
             llReviewContent.addView(itemView);

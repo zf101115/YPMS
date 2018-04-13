@@ -2,12 +2,59 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:gravity="center"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        android:gravity="center">
+        <LinearLayout
+            android:id="@+id/ll_tab_attention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_tab_attention"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimary"
+                android:text="关注"/>
+            <View
+                android:id="@+id/view_tab_attention"
+                android:layout_width="10dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/colorPrimary"/>
+        </LinearLayout>
 
-    <!--<com.amap.api.maps2d.MapView-->
-        <!--android:id="@+id/map"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"/>-->
-
+        <LinearLayout
+            android:id="@+id/ll_tab_piazza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            android:layout_marginLeft="30dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_tab_piazza"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="广场"/>
+            <View
+                android:id="@+id/view_tab_piazza"
+                android:layout_width="10dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="3dp"
+                android:visibility="invisible"
+                android:background="@color/colorPrimary"/>
+        </LinearLayout>
+    </LinearLayout>
+    <com.ypms.customWidget.CustomViewPage
+        android:id="@+id/view_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>
