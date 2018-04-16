@@ -49,9 +49,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:lineSpacingExtra="5dp"
-        android:maxLines="2"
+        android:maxLines="6"
         android:ellipsize="end"
         android:text="美吉姆华农课多岁学生生在料理，心里学和谁愿的深入研里学和谁愿的深入研究以及科学的设计雨哦分类，杨娥出雨ID非常" />
+
+    <TextView
+        android:id="@+id/tv_see_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查看全文"
+        android:textColor="@color/colorPrimary"/>
     <com.ypms.customWidget.NoScrollGridView
         android:id="@+id/grid_pic"
         android:layout_width="match_parent"

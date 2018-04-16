@@ -83,8 +83,8 @@ public class CommentAllActivity extends ToolBarActivity {
         rv.setAdapter(commentAllAdapter);
         commentAllAdapter.setPics(pics);
         ArrayList<Mechanism> list = new ArrayList<>();
-        for (int i=0;i<=10;i++){
-            Mechanism mechanism = new Mechanism(i+"小雨妈妈");
+        for (int i=0;i<6;i++){
+            Mechanism mechanism = new Mechanism(pics.get(i));
             list.add(mechanism);
         }
         commentAllAdapter.setItems(list);

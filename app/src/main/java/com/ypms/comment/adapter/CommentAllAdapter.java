@@ -1,6 +1,8 @@
 package com.ypms.comment.adapter;
 
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import com.ypms.R;
 import com.ypms.common.recycleView.BaseRecyclerAdapter;
 import com.ypms.common.recycleView.BaseRecyclerViewHolder;
 import com.ypms.course.adapter.ReviewPicAdapter;
+import com.ypms.customWidget.CircleImageView;
 import com.ypms.customWidget.NoScrollGridView;
 import com.ypms.home.model.Mechanism;
 
@@ -42,12 +45,12 @@ public class CommentAllAdapter extends BaseRecyclerAdapter {
 
     @Override
     public void onBindViewHolder(BaseRecyclerViewHolder holder, int position) {
-        ViewHolder viewHolder = (ViewHolder) holder;
+        final ViewHolder viewHolder = (ViewHolder) holder;
         final Mechanism mechanism = (Mechanism) items.get(position);
-        viewHolder.tvNick.setText(mechanism.getTitle());
         ReviewPicAdapter reviewPicAdapter = new ReviewPicAdapter(mContext);
         reviewPicAdapter.setItems(pics);
         viewHolder.gridView.setAdapter(reviewPicAdapter);
+        Picasso.with(mContext).load(mechanism.getTitle()).into(viewHolder.avatar);
     }
 
     class ViewHolder extends BaseRecyclerViewHolder{
@@ -56,6 +59,12 @@ public class CommentAllAdapter extends BaseRecyclerAdapter {
         TextView tvNick;
         @BindView(R.id.grid_pic)
         NoScrollGridView gridView;
+        @BindView(R.id.tv_content)
+        TextView tvContent;
+        @BindView(R.id.tv_see_all)
+        TextView tvSeeAll;
+        @BindView(R.id.avatar)
+        CircleImageView avatar;
 
      public ViewHolder(View itemView){
          super(itemView, mItemClickListener);
