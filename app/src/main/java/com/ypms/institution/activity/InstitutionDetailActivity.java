@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.ypms.R;
+import com.ypms.comment.activity.CommentAllActivity;
 import com.ypms.comment.activity.CommentDetailActivity;
 import com.ypms.common.ContextUtils;
 import com.ypms.common.ToolBarActivity;
@@ -292,6 +293,12 @@ public class InstitutionDetailActivity extends ToolBarActivity {
     public void otherMoreClick(){
 
     }
+
+    @OnClick(R.id.ll_review)
+    public void llReviewClick(){
+        CommentAllActivity.startActivity(mContext);
+    }
+
     @OnClick(R.id.ll_teacher)
     public void llTeacherClick(){
         TeacherActivity.startActivity(mContext);

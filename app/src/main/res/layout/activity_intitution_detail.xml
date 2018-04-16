@@ -11,291 +11,329 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="none">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:orientation="vertical">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="175dp">
+
                 <ImageView
                     android:id="@+id/iv_pic"
                     android:layout_width="match_parent"
-                    android:scaleType="centerCrop"
-                    android:layout_height="175dp"/>
+                    android:layout_height="175dp"
+                    android:scaleType="centerCrop" />
+
                 <TextView
                     android:id="@+id/tv_mark_left"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"
                     android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginBottom="10dp"
                     android:background="@drawable/bg_grey_grey_radius"
-                    android:text="英语能力"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="核心素养"
                     android:padding="5dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/bg_grey_grey_radius"
-                    android:layout_toRightOf="@+id/tv_mark_left"/>
+                    android:text="英语能力" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4.9"
-                    android:textSize="16sp"
-                    android:paddingLeft="12dp"
-                    android:paddingRight="12dp"
-                    android:paddingTop="3dp"
-                    android:paddingBottom="3dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/tv_mark_left"
+                    android:background="@drawable/bg_grey_grey_radius"
+                    android:padding="5dp"
+                    android:text="核心素养" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
                     android:layout_marginBottom="10dp"
                     android:layout_marginRight="15dp"
+                    android:background="@drawable/bg_red_radius"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="3dp"
+                    android:text="4.9"
                     android:textColor="@color/white"
-                    android:background="@drawable/bg_red_radius"/>
+                    android:textSize="16sp" />
             </RelativeLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp">
+
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
                     android:text="微博国际英语"
                     android:textColor="@color/black"
-                    android:layout_marginLeft="15dp"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" />
+
                 <ImageView
                     android:id="@+id/iv_location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_ag_location"/>
+                    android:src="@drawable/ic_ag_location" />
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
-                    android:src="@drawable/ic_ag_phone"/>
+                    android:src="@drawable/ic_ag_phone" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:layout_marginBottom="3dp"
                 android:layout_marginTop="6dp"
-                android:layout_marginBottom="3dp">
+                android:gravity="center">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:textColor="@color/colorPrimary"
-                    android:paddingTop="2dp"
+                    android:background="@drawable/bg_green_white_radius"
                     android:paddingBottom="2dp"
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp"
-                    android:background="@drawable/bg_green_white_radius"
-                    android:text="品牌故事"/>
+                    android:paddingTop="2dp"
+                    android:text="品牌故事"
+                    android:textColor="@color/colorPrimary" />
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="可就是洞若观火死顾好快速的后果洞若观火死顾好"
-                    android:maxLines="1"
                     android:layout_marginLeft="10dp"
-                    android:ellipsize="end"/>
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="可就是洞若观火死顾好快速的后果洞若观火死顾好" />
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_ag_vi"/>
+                    android:src="@drawable/ic_ag_vi" />
             </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="9dp"
-                android:background="@color/colorGrey_E6"/>
+                android:background="@color/colorGrey_E6" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical">
+
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:padding="9dp"
                     android:layout_marginLeft="15dp"
-                    android:text="动态机构"/>
+                    android:layout_weight="1"
+                    android:padding="9dp"
+                    android:text="动态机构"
+                    android:textSize="16sp" />
+
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
+
                     <com.ypms.customWidget.CircleImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@color/colorPrimary"/>
+                        android:src="@color/colorPrimary" />
+
                     <View
                         android:layout_width="7dp"
                         android:layout_height="7dp"
                         android:layout_marginLeft="20dp"
-                        android:background="@drawable/shape_round_red"/>
+                        android:background="@drawable/shape_round_red" />
                 </RelativeLayout>
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_ag_more"/>
+                    android:src="@drawable/ic_ag_more" />
             </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="9dp"
-                android:background="@color/colorGrey_E6"/>
+                android:background="@color/colorGrey_E6" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="8dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingTop="8dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="荣誉"
                     android:layout_marginLeft="15dp"
-                    android:textColor="@color/red"
-                    android:paddingTop="2dp"
+                    android:background="@drawable/bg_red_white_radius"
                     android:paddingBottom="2dp"
                     android:paddingLeft="6dp"
                     android:paddingRight="6dp"
-                    android:background="@drawable/bg_red_white_radius"/>
+                    android:paddingTop="2dp"
+                    android:text="荣誉"
+                    android:textColor="@color/red" />
+
                 <LinearLayout
                     android:id="@+id/ll_honor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:orientation="vertical">
-                </LinearLayout>
+                    android:orientation="vertical"></LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="8dp"
+                android:orientation="horizontal"
                 android:paddingBottom="10dp"
-                android:orientation="horizontal">
+                android:paddingTop="8dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="特色"
                     android:layout_marginLeft="15dp"
-                    android:textColor="@color/red"
-                    android:paddingTop="2dp"
+                    android:background="@drawable/bg_red_white_radius"
                     android:paddingBottom="2dp"
                     android:paddingLeft="6dp"
                     android:paddingRight="6dp"
-                    android:background="@drawable/bg_red_white_radius"/>
+                    android:paddingTop="2dp"
+                    android:text="特色"
+                    android:textColor="@color/red" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="全国口碑因行李外语培训机构\r\n2016年教育风云盛典最佳恭喜拿奖\r\n全国口碑因行李外语培训机构"/>
+                        android:text="全国口碑因行李外语培训机构\r\n2016年教育风云盛典最佳恭喜拿奖\r\n全国口碑因行李外语培训机构" />
                 </LinearLayout>
             </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="9dp"
-                android:background="@color/colorGrey_E6"/>
+                android:background="@color/colorGrey_E6" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:layout_marginLeft="15dp"
-                android:textSize="16sp"
+                android:layout_marginTop="15dp"
+                android:text="活动预约"
                 android:textColor="@color/black"
-                android:text="活动预约"/>
+                android:textSize="16sp" />
+
             <LinearLayout
                 android:id="@+id/ll_active_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-            </LinearLayout>
+                android:orientation="vertical"></LinearLayout>
+
             <LinearLayout
                 android:id="@+id/ll_stretch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="8dp"
-                android:background="#f4f4f4"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp">
+                android:layout_marginRight="15dp"
+                android:background="#f4f4f4"
+                android:gravity="center"
+                android:padding="8dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorPrimary"
-                    android:gravity="center_vertical"
                     android:drawableRight="@drawable/ic_ag_btn_pulldown"
-                    android:text="展开剩下3个活动" />
+                    android:gravity="center_vertical"
+                    android:text="展开剩下3个活动"
+                    android:textColor="@color/colorPrimary" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/ll_class"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical">
+
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:textSize="16sp"
+                    android:layout_weight="1"
+                    android:text="课程团购"
                     android:textColor="@color/black"
-                    android:text="课程团购"/>
+                    android:textSize="16sp" />
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_ag_more"/>
+                    android:src="@drawable/ic_ag_more" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/ll_bulk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-            </LinearLayout>
+                android:orientation="vertical"></LinearLayout>
 
             <LinearLayout
                 android:id="@+id/ll_other_more"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical">
+
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:textSize="16sp"
+                    android:layout_weight="1"
+                    android:text="其他课程"
                     android:textColor="@color/black"
-                    android:text="其他课程"/>
+                    android:textSize="16sp" />
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_ag_more"/>
+                    android:src="@drawable/ic_ag_more" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/ll_other"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-            </LinearLayout>
+                android:orientation="vertical"></LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="9dp"
-                android:background="@color/colorGrey_E6"/>
-            <include layout="@layout/layout_detail_under"/>
+                android:background="@color/colorGrey_E6" />
+
+            <include layout="@layout/layout_detail_under" />
         </LinearLayout>
     </com.ypms.customWidget.ObservableScrollView>
 </LinearLayout>
