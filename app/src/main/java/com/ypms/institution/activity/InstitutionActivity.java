@@ -49,6 +49,8 @@ public class InstitutionActivity extends ToolBarActivity implements ScreenPopupW
     XRecyclerView rv;
     @BindView(R.id.view)
     View view;
+    @BindView(R.id.loading)
+    AVLoadingIndicatorView loading;
 
     @Override
     protected String setTittle() {
@@ -71,6 +73,7 @@ public class InstitutionActivity extends ToolBarActivity implements ScreenPopupW
         ButterKnife.bind(this);
         rv.setPullRefreshEnabled(true);
         rv.setRefreshProgressStyle(ProgressStyle.BallPulse);
+        loading.setVisibility(View.GONE);
         initData();
         initEvent();
         initPopup();

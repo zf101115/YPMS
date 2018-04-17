@@ -241,18 +241,6 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
         llToolNear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                getPermission(new PermissionCall() {
-//                    @Override
-//                    public void success(List<Integer> list) {
-//                        Toast.makeText(mContext,list.size()+"成功数目",Toast.LENGTH_SHORT).show();
-//                    }
-//
-//                    @Override
-//                    public void fail(List<Integer> list) {
-//                        Toast.makeText(mContext,list.size()+"失败数目",Toast.LENGTH_SHORT).show();
-//
-//                    }
-//                },Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA);
 
                 ContextUtils.showPopupWindow(screenPopupWindow,HomeFragment.this.view);
                 viewStub.setVisibility(View.VISIBLE);

@@ -43,6 +43,7 @@ public class EmbedFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         containerView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.bind(this,containerView);
+        rv.setPullRefreshEnabled(false);
         initData();
         initEvent();
         return containerView;
