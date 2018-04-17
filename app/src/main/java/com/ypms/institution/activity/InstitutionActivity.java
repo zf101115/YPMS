@@ -7,7 +7,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
+import com.jcodecraeer.xrecyclerview.progressindicator.AVLoadingIndicatorView;
 import com.ypms.R;
 import com.ypms.area.model.Area;
 import com.ypms.common.ContextUtils;
@@ -68,7 +70,7 @@ public class InstitutionActivity extends ToolBarActivity implements ScreenPopupW
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
         rv.setPullRefreshEnabled(true);
-
+        rv.setRefreshProgressStyle(ProgressStyle.BallPulse);
         initData();
         initEvent();
         initPopup();
