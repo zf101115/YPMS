@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/register_image_step1"/>
+        <TextView
+            android:id="@+id/tv_step"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:text="步骤一"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:hint="请输入手机号"
+        android:background="@color/white"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:textColorHint="@color/colorGrey_E5"/>
+    <View
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="10dp"
+        style="@style/div_vertical_line"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="请输入手机号"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:background="@color/white"
+            android:textColorHint="@color/colorGrey_E5"/>
+        <TextView
+            android:id="@+id/tv_sms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/commit_color"
+            android:padding="6dp"
+            android:textSize="12sp"
+            android:visibility="gone"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/bg_gery_white_5_round"
+            android:text="获取验证码"/>
+    </LinearLayout>
+    <View
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="10dp"
+        style="@style/div_vertical_line"/>
+
+
+    <TextView
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:background="@drawable/bg_commit_round"
+        android:gravity="center"
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp"
+        android:text="下一步"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>

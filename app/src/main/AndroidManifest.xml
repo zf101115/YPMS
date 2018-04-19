@@ -46,6 +46,8 @@
             android:windowSoftInputMode="stateVisible|adjustResize"/>
         <activity android:name=".comment.activity.CommentAllActivity"/>
         <activity android:name=".photopick.imageloader.PhotoPickActivity"/>
+        <activity android:name=".mine.activity.LoginActivity"/>
+        <activity android:name=".mine.activity.RegisterActivity"/>
     </application>
 
 </manifest>
