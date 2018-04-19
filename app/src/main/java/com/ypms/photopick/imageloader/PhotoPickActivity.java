@@ -316,18 +316,18 @@ public class PhotoPickActivity extends ToolBarActivity implements ListImageDirPo
         }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        boolean result;
-        switch (id) {
-            case android.R.id.home:
-                onBackPressed();
-                result = true;
-                break;
-            default:
-                result = super.onOptionsItemSelected(item);
-        }
-        return result;
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        int id = item.getItemId();
+//        boolean result;
+//        switch (id) {
+//            case android.R.id.home:
+//                onBackPressed();
+//                result = true;
+//                break;
+//            default:
+//                result = super.onOptionsItemSelected(item);
+//        }
+//        return result;
+//    }
 }

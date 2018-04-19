@@ -41,6 +41,11 @@ public abstract class BaseListAdapter<T> extends BaseAdapter{
         }
     }
 
+    public void appendItem(T item){
+        this.items.add(item);
+        notifyDataSetChanged();
+    }
+
     public void preAppendItems(List<T> preAppendItems){
         if(preAppendItems.size()>0){
             for(int i=preAppendItems.size()-1;i>=0;i--){
