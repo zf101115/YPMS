@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ import com.ypms.comment.adapter.CommentAdapter;
 import com.ypms.common.ToolBarActivity;
 import com.ypms.course.adapter.ReviewPicAdapter;
 import com.ypms.customWidget.CircleImageView;
+import com.ypms.customWidget.GalleryDialog;
 import com.ypms.customWidget.NoScrollGridView;
 import com.ypms.home.model.Mechanism;
 
@@ -50,6 +52,9 @@ public class CommentDetailActivity extends ToolBarActivity {
 
     private View headerView;
     private XRecyclerView rv;
+    private GalleryDialog galleryDialog;
+    private List<String> pics = new ArrayList<>();
+
 
     @Override
     protected String setTittle() {
@@ -75,11 +80,23 @@ public class CommentDetailActivity extends ToolBarActivity {
         llCommentHeader.setVisibility(View.VISIBLE);
         Picasso.with(mContext).load("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg").into(avatar);
         initData();
+        initEvent();
+    }
+
+    private void initEvent() {
+        gridPic.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (galleryDialog == null){
+                    galleryDialog = new GalleryDialog(mContext,pics);
+                }
+                galleryDialog.showAtPositioin(position);
+            }
+        });
     }
 
     private void initData() {
         ReviewPicAdapter reviewPicAdapter = new ReviewPicAdapter(mContext);
-        List<String> pics = new ArrayList<>();
         pics.add("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg");
         pics.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522734328&di=5067351a86cf85b3337c7641ad55279a&imgtype=jpg&er=1&src=http%3A%2F%2Fsem.g3img.com%2Fg3img%2Fweiwuguoji%2F20140711161058_41758.jpg");
         pics.add("http://z.newstaredu.cn/news/2017/2017-10/%E5%B0%91%E5%84%BF%E8%8B%B1%E8%AF%AD55.jpeg");

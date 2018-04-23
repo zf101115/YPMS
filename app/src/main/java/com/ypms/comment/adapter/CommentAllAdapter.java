@@ -3,9 +3,11 @@ package com.ypms.comment.adapter;
 import android.content.Context;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -14,6 +16,7 @@ import com.ypms.common.recycleView.BaseRecyclerAdapter;
 import com.ypms.common.recycleView.BaseRecyclerViewHolder;
 import com.ypms.course.adapter.ReviewPicAdapter;
 import com.ypms.customWidget.CircleImageView;
+import com.ypms.customWidget.GalleryDialog;
 import com.ypms.customWidget.NoScrollGridView;
 import com.ypms.home.model.Mechanism;
 
@@ -29,12 +32,15 @@ import butterknife.ButterKnife;
 
 public class CommentAllAdapter extends BaseRecyclerAdapter {
     private List<String> pics = new ArrayList<>();
+    private GalleryDialog galleryDialog;
+
     public CommentAllAdapter(Context context) {
         super(context);
     }
 
     public void setPics(List<String> pics){
         this.pics = pics;
+        galleryDialog = new GalleryDialog(mContext,pics);
     }
 
     @Override
@@ -50,6 +56,13 @@ public class CommentAllAdapter extends BaseRecyclerAdapter {
         ReviewPicAdapter reviewPicAdapter = new ReviewPicAdapter(mContext);
         reviewPicAdapter.setItems(pics);
         viewHolder.gridView.setAdapter(reviewPicAdapter);
+        ((ViewHolder) holder).gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                galleryDialog.showAtPositioin(position);
+
+            }
+        });
         Picasso.with(mContext).load(mechanism.getTitle()).into(viewHolder.avatar);
     }
 

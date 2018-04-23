@@ -62,10 +62,10 @@ public class RegisterActivity extends ToolBarActivity {
             }
         }
         if( fragments[val].isAdded()){
-              getSupportFragmentManager().beginTransaction().show(fragments[val]).commitAllowingStateLoss();
+              getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_right_in,0).show(fragments[val]).commitAllowingStateLoss();
 
         }else {
-           getSupportFragmentManager().beginTransaction().add(R.id.ll_content, fragments[val]).commitAllowingStateLoss();
+           getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_right_in,0).add(R.id.ll_content, fragments[val]).commitAllowingStateLoss();
 
         }
     }
