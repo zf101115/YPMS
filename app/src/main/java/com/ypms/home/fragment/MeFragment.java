@@ -11,6 +11,7 @@ import com.ypms.common.BaseFragment;
 import com.ypms.common.LazyBaseFragment;
 import com.ypms.mine.activity.ActiveMineActivity;
 import com.ypms.mine.activity.LoginActivity;
+import com.ypms.mine.activity.TeacherCollectActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,6 +47,14 @@ public class MeFragment extends LazyBaseFragment {
     @OnClick(R.id.ll_mine_active)
     public void mineActiveClick(){
         ActiveMineActivity.startActivity(mContext);
+    }
+    @OnClick(R.id.ll_course)
+    public void mineCourseClick(){
+        ActiveMineActivity.startActivity(mContext);
+    }
+    @OnClick(R.id.ll_teacher)
+    public void teacherClick(){
+        TeacherCollectActivity.startActivity(mContext);
     }
 
     @Override

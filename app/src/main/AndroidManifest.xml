@@ -49,6 +49,7 @@
         <activity android:name=".mine.activity.LoginActivity"/>
         <activity android:name=".mine.activity.RegisterActivity"/>
         <activity android:name=".mine.activity.ActiveMineActivity"/>
+        <activity android:name=".mine.activity.TeacherCollectActivity"/>
     </application>
 
 </manifest>

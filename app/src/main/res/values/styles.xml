@@ -5,6 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/color_grey_99</item>
         <item name="colorPrimaryDark">@color/color_grey_99</item>
+        <item name="android:listDivider">@drawable/divider</item>
     </style>
 
     <!--水平分割线-->
