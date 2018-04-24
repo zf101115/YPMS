@@ -48,6 +48,7 @@
         <activity android:name=".photopick.imageloader.PhotoPickActivity"/>
         <activity android:name=".mine.activity.LoginActivity"/>
         <activity android:name=".mine.activity.RegisterActivity"/>
+        <activity android:name=".mine.activity.ActiveMineActivity"/>
     </application>
 
 </manifest>

@@ -4,12 +4,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.ypms.R;
 import com.ypms.common.BaseFragment;
 import com.ypms.common.LazyBaseFragment;
+import com.ypms.mine.activity.ActiveMineActivity;
 import com.ypms.mine.activity.LoginActivity;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -18,6 +21,9 @@ import butterknife.OnClick;
  */
 
 public class MeFragment extends LazyBaseFragment {
+
+    @BindView(R.id.ll_mine_active)
+    LinearLayout llMineActive;
 
     private View containerView;
 
@@ -36,6 +42,10 @@ public class MeFragment extends LazyBaseFragment {
     @OnClick(R.id.tv_login)
     public void loginClick(){
         LoginActivity.startActivity(mContext);
+    }
+    @OnClick(R.id.ll_mine_active)
+    public void mineActiveClick(){
+        ActiveMineActivity.startActivity(mContext);
     }
 
     @Override

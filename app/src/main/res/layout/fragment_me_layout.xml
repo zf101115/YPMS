@@ -132,6 +132,7 @@
                     android:layout_marginLeft="15dp"
                     style="@style/div_vertical_line"/>
                 <LinearLayout
+                    android:id="@+id/ll_mine_active"
                     android:background="@drawable/bg_write_ripple"
                     android:paddingLeft="15dp"
                     android:layout_width="match_parent"

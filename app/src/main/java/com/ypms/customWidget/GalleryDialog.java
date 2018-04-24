@@ -38,7 +38,7 @@ public class GalleryDialog extends Dialog {
     ViewPager viewPager;
     @BindView(R.id.tv_page)
     TextView tvPage;
-    public GalleryDialog(@NonNull Context context,List<String> pics) {
+    public GalleryDialog(Context context,List<String> pics) {
         super(context);
         this.mContext =context;
         this.pics = pics;
