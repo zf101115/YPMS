@@ -6,11 +6,14 @@ import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Toast;
 
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.ypms.R;
 import com.ypms.common.MyDecoration;
 import com.ypms.common.ToolBarActivity;
+import com.ypms.common.recycleView.RecyclerItemClickListener;
 import com.ypms.home.model.Mechanism;
 import com.ypms.mine.adapter.ActiveMineAdapter;
 import com.ypms.mine.adapter.TeacherCollectAdapter;
@@ -28,6 +31,7 @@ import static com.ypms.R.id.rv;
 
 public class TeacherCollectActivity extends ToolBarActivity {
 
+    private TeacherCollectAdapter teacherCollectAdapter;
 
     @BindView(R.id.rv)
     XRecyclerView rv;
@@ -52,13 +56,28 @@ public class TeacherCollectActivity extends ToolBarActivity {
         ButterKnife.bind(this);
         rv.setPullRefreshEnabled(true);
         initData();
+        initEvent();
+    }
+
+    private void initEvent() {
+        teacherCollectAdapter.setOnItemClickListener(new RecyclerItemClickListener() {
+            @Override
+            public void OnItemClick(View view, int position) {
+
+            }
+
+            @Override
+            public void OnItemLongClick(View view, int position) {
+                Toast.makeText(mContext,"长安删除",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void initData() {
         LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         rv.setLayoutManager(layoutManager);
-        TeacherCollectAdapter teacherCollectAdapter = new TeacherCollectAdapter(mContext);
+        teacherCollectAdapter = new TeacherCollectAdapter(mContext);
         rv.setAdapter(teacherCollectAdapter);
         rv.addItemDecoration(new MyDecoration(mContext,MyDecoration.VERTICAL_LIST));
         ArrayList<Mechanism> list = new ArrayList<>();
