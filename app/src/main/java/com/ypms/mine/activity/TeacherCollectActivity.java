@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -68,7 +70,7 @@ public class TeacherCollectActivity extends ToolBarActivity {
 
             @Override
             public void OnItemLongClick(View view, int position) {
-                Toast.makeText(mContext,"长安删除",Toast.LENGTH_SHORT).show();
+
             }
         });
     }
