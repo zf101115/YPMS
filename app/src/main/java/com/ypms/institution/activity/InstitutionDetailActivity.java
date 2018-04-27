@@ -310,7 +310,6 @@ public class InstitutionDetailActivity extends ToolBarActivity {
     }
     @OnClick(R.id.iv_pic)
     public void picClick(){
-        CommentAddActivity.startActivity(mContext);
     }
     @OnClick(R.id.ll_stretch)
     public void stretchClick(){
@@ -334,6 +333,11 @@ public class InstitutionDetailActivity extends ToolBarActivity {
         }
         isActiveOpen = true;
         }
+    }
+
+    @OnClick(R.id.iv_comment_write)
+    public void writeComment(){
+        CommentAddActivity.startActivity(mContext);
     }
 
     public void scrollToPosition(int y) {
