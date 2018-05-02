@@ -23,29 +23,31 @@
     </LinearLayout>
 
     <EditText
+        android:id="@+id/et_mobile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:hint="请输入手机号"
-        android:background="@color/white"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
-        android:textColorHint="@color/colorGrey_E5"/>
+        android:layout_marginTop="45dp"
+        android:background="@color/white"
+        android:hint="请输入手机号"
+        android:textColorHint="@color/colorGrey_E5" />
+
     <View
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginTop="10dp"
         style="@style/div_vertical_line"/>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
         android:layout_marginTop="45dp">
         <EditText
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:hint="请输入手机号"
+            android:hint="请输入验证码"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
             android:background="@color/white"
@@ -55,9 +57,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/commit_color"
-            android:padding="6dp"
-            android:textSize="12sp"
-            android:visibility="gone"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="10sp"
             android:layout_marginRight="12dp"
             android:background="@drawable/bg_gery_white_5_round"
             android:text="获取验证码"/>
@@ -67,8 +71,6 @@
         android:layout_marginRight="24dp"
         android:layout_marginTop="10dp"
         style="@style/div_vertical_line"/>
-
-
     <TextView
         android:id="@+id/next"
         android:layout_width="match_parent"

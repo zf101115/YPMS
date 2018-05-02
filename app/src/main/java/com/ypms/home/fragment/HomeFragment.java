@@ -16,6 +16,10 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.amap.api.location.AMapLocation;
+import com.amap.api.location.AMapLocationClient;
+import com.amap.api.location.AMapLocationClientOption;
+import com.amap.api.location.AMapLocationListener;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -40,7 +44,9 @@ import com.ypms.institution.activity.InstitutionActivity;
 import com.ypms.institution.activity.InstitutionDetailActivity;
 import com.ypms.net.RestBase;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
@@ -141,6 +147,7 @@ public class HomeFragment extends LazyBaseFragment implements ScreenPopupWindow.
         initView(inflater);
         initEvent();
         initDate();
+
         isLoad = true;
         return rootView;
     }
