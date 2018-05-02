@@ -1,6 +1,5 @@
 local.properties
 build
-bugly
 app/app-release.apk
 app/mapping.txt
 app/seeds.txt
@@ -37,10 +36,6 @@ Thumbs.db
 *.iml
 .idea
 .gradle
-
-
-
-
 
 import-summary.txt
 
